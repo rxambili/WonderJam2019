@@ -1,9 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("UI")] 
+    public PlayerCanvasManager player1Panel;
     public static int maxPressure = 100;
     public static int minPressure = 0;
     public static int maxFlow = 100;
@@ -14,18 +15,22 @@ public class PlayerController : MonoBehaviour
     public int pressure { get; set; }
     public int flow { get; set; }
 
-
-    // Start is called before the first frame update
     void Start()
     {
         pressure = minPressure;
         flow = maxFlow;
+
     }
 
-    // Update is called once per frame
+
+    bool m_SelectionActive = false;
+    ButtonName m_currentSelection;
     void Update()
     {
-        
+        if (m_SelectionActive)
+        {
+                //retenir l'input
+        }
     }
 
     public void AddPressure(int amount)
@@ -66,4 +71,36 @@ public class PlayerController : MonoBehaviour
         AddFlow(regenFlow);
         return pressure == maxPressure;
     }
+
+
+    public void OptionMode()
+    {
+        player1Panel.OptionMode();
+
+        player1Panel.DisplayButtons(true);
+        m_SelectionActive = true;
+    }
+
+    public void ClashMode()
+    {
+        player1Panel.SetButtonText(ButtonName.X, "Clash1");
+        player1Panel.SetButtonText(ButtonName.Y, "Clash2");
+        player1Panel.SetButtonText(ButtonName.B, "Clash3");
+        player1Panel.SetButtonText(ButtonName.A, "Clash4");
+
+        m_SelectionActive = true;
+    }
+
+    public void RecupFlowMode()
+    {
+        m_SelectionActive = false;
+        player1Panel.DisplayButtons(false);
+    }
+
+    public void PublicMode()
+    {
+        m_SelectionActive = false;
+        player1Panel.DisplayButtons(false);
+    }
+
 }
