@@ -12,10 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Clasheur
   m_EditorClassIdentifier: 
-  title: '...'
-  lines: []
-  flowCost: 0
-  category: 0
-  effects: []
-  hasCounter: 0
-  counterLines: []
+  title: "Clasheur n\xE9"
+  lines:
+  - Les gens disent
+  - "Que dieu m'a envoy\xE9 woltek"
+  - "Pour q'j'lui apprenne \xE0 clasher"
+  flowCost: 80
+  category: 1
+  effects:
+  - {fileID: 11400000, guid: 970f42e8ea7e90449bcf50b34617633b, type: 2}
+  - {fileID: 11400000, guid: f51b3dd137f6f72479da201b61d485d6, type: 2}
+  hasCounter: 1
+  counterLines:
+  - "J'me souvient pas t'avoir envoy\xE9 quelqu'un"

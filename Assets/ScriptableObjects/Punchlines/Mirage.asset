@@ -10,12 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
-  m_Name: Stage
+  m_Name: Mirage
   m_EditorClassIdentifier: 
-  title: '...'
-  lines: []
-  flowCost: 0
-  category: 0
-  effects: []
+  title: Mirage
+  lines:
+  - J'ai tellement le style
+  - Quand je suis sur le stage
+  - Que tout le monde me prends
+  - Pour un myth un mirage
+  flowCost: 40
+  category: 1
+  effects:
+  - {fileID: 11400000, guid: 850f11397f5f8884c9dac6e432a1c620, type: 2}
+  - {fileID: 11400000, guid: 8261c5873d0841447a90c601e18346fd, type: 2}
   hasCounter: 0
   counterLines: []

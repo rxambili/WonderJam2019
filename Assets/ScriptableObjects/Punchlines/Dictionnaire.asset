@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Dictionnaire
   m_EditorClassIdentifier: 
-  title: '...'
-  lines: []
-  flowCost: 0
-  category: 0
-  effects: []
+  title: Dictionnaire
+  lines:
+  - Dans le dictionnaire
+  - "Ils ont pas trouv\xE9 l'mot pour te d\xE9crire"
+  - "Et y r\xE9fl\xE9chir les ferait bien trop souffrir"
+  flowCost: 20
+  category: 1
+  effects:
+  - {fileID: 11400000, guid: 98b23e103974cb842a5c6ed22f607f67, type: 2}
   hasCounter: 0
   counterLines: []

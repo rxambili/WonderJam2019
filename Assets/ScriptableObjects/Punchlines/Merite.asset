@@ -10,12 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
-  m_Name: "M\xE9rite"
+  m_Name: Merite
   m_EditorClassIdentifier: 
-  title: '...'
-  lines: []
-  flowCost: 0
+  title: "M\xE9rite"
+  lines:
+  - Juste parce que tu parle
+  - "Ca veut pas dire qta du m\xE9rite"
+  - "Arr\xEAte de brasser de l'air"
+  - Il faudrait qtu cogite
+  flowCost: 15
   category: 0
-  effects: []
+  effects:
+  - {fileID: 11400000, guid: 1715976b59f5892449b3d5036468c0c9, type: 2}
+  - {fileID: 11400000, guid: ca978e13cd1da6c4bb987f127767e56f, type: 2}
   hasCounter: 0
   counterLines: []

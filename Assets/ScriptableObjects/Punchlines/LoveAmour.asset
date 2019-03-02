@@ -10,12 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
-  m_Name: Punchline
+  m_Name: LoveAmour
   m_EditorClassIdentifier: 
-  title: '...'
-  lines: []
-  flowCost: 0
+  title: Love...Amour
+  lines:
+  - Jvais tatouer love sur les phalanges
+  - Pour te frapper avec amour
+  flowCost: 50
   category: 0
-  effects: []
+  effects:
+  - {fileID: 11400000, guid: 09fd890d1848f6d429eeff417b76bbaa, type: 2}
+  - {fileID: 11400000, guid: 8106f5538e8e4634385d090ab4e862e0, type: 2}
   hasCounter: 0
   counterLines: []

@@ -12,10 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Tickets
   m_EditorClassIdentifier: 
-  title: '...'
-  lines: []
-  flowCost: 0
+  title: Tickets
+  lines:
+  - "Jtai gard\xE9 deux tickets"
+  - "Pour ma prochaine repr\xE9sentation"
+  - "Am\xE8ne un ami"
+  - Si t'en a un...
+  flowCost: 80
   category: 0
-  effects: []
-  hasCounter: 0
-  counterLines: []
+  effects:
+  - {fileID: 11400000, guid: cba59a62a3462da4da149384cb2e497f, type: 2}
+  - {fileID: 11400000, guid: 98b23e103974cb842a5c6ed22f607f67, type: 2}
+  hasCounter: 1
+  counterLines:
+  - "Jpourrais pas venir \xE0 la prochaine"
+  - Mais la suivante si y'en a une...

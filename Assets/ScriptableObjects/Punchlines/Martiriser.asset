@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Martiriser
   m_EditorClassIdentifier: 
-  title: '...'
-  lines: []
-  flowCost: 0
-  category: 0
-  effects: []
+  title: Martiriser
+  lines:
+  - "Je suis d\xE9sol\xE9"
+  - J'aime pas martiriser les faibles
+  flowCost: 10
+  category: 1
+  effects:
+  - {fileID: 11400000, guid: 1715976b59f5892449b3d5036468c0c9, type: 2}
+  - {fileID: 11400000, guid: 8106f5538e8e4634385d090ab4e862e0, type: 2}
   hasCounter: 0
   counterLines: []
