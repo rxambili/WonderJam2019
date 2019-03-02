@@ -22,6 +22,10 @@ public class RoundManager : MonoBehaviour
 
     [Header("Punchline")]
     [SerializeField] private Punchline[] punchlines;
+    [SerializeField] private Punchline noActionPunchline;
+    [SerializeField] private Punchline publicPunchline;
+    [SerializeField] private Punchline reposPunchline;
+
     [Header("Debug")] [SerializeField] private int round = 1;
 
 
@@ -51,6 +55,7 @@ public class RoundManager : MonoBehaviour
 
     public void nextPhase()
     {
+        EndPhase();
         if (currentPhase == PhaseName.END_PHASE)
         {
             nextRound();
@@ -63,6 +68,8 @@ public class RoundManager : MonoBehaviour
 
     }
 
+   
+
     private void nextRound()
     {
         currentPhase = PhaseName.SELECT_OPTION;
@@ -73,7 +80,72 @@ public class RoundManager : MonoBehaviour
     {
         GetInputPlayer1();
         GetInputPlayer2();
-        if (timer <= 0)
+
+        switch(currentPhase)
+        {
+            case PhaseName.SELECT_OPTION:
+                break;
+
+            case PhaseName.SELECT_ACTION:
+                break;
+
+            case PhaseName.END_PHASE:
+
+                if (!player1.IsTalking() && !player1.HasTalked())
+                {
+                    switch (player1.GetActionMode())
+                    {
+                        case ActionMode.CLASH:
+                            LaunchChosenLine(player1, player2);
+                            break;
+                        case ActionMode.FLOW:
+                            player1.SayPunchline(reposPunchline);
+                            break;
+                        case ActionMode.PUBLIC:
+                            player1.SayPunchline(publicPunchline);
+                            break;
+                        case ActionMode.NOACTION:
+                            player1.SayPunchline(noActionPunchline);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                if (!player2.IsTalking() && !player2.HasTalked() && player1.HasTalked())
+                {
+                    switch (player2.GetActionMode())
+                    {
+                        case ActionMode.CLASH:
+                            LaunchChosenLine(player2, player1);
+
+                            break;
+                        case ActionMode.FLOW:
+                            player2.SayPunchline(reposPunchline);
+                            break;
+                        case ActionMode.PUBLIC:
+                            player2.SayPunchline(publicPunchline);
+                            break;
+                        case ActionMode.NOACTION:
+                            player2.SayPunchline(noActionPunchline);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+               
+                if (player1.HasTalked() && player2.HasTalked())
+                {
+                    player1.ResetDialogues();
+                    player2.ResetDialogues();
+                    nextPhase();
+                }
+                break;
+
+            default:
+                throw new ArgumentOutOfRangeException("phase", currentPhase, null);
+        }
+        if (timer <= 0 && currentPhase != PhaseName.END_PHASE)
         {
             nextPhase();
         }
@@ -87,26 +159,57 @@ public class RoundManager : MonoBehaviour
                 player1.OptionMode();
                 player2.OptionMode();
                 StartCoroutine(StartCountdown(optionTime));
+
+                player1.ResetSelectedButton();
+                player2.ResetSelectedButton();
                 break;
 
             case PhaseName.SELECT_ACTION:
                 SelectAvailablePunchlines();
                 LaunchChosenAction(player1);
                 LaunchChosenAction(player2);
-                StartCoroutine(StartCountdown(actionTime));
+                if (player1.GetActionMode() != ActionMode.CLASH && player2.GetActionMode() != ActionMode.CLASH)
+                {
+                    nextPhase();
+                } else
+                {
+                    StartCoroutine(StartCountdown(actionTime));
+                }
+                player1.ResetSelectedButton();
+                player2.ResetSelectedButton();
                 break;
 
             case PhaseName.END_PHASE:
-                player1.EndRound();
-                player2.EndRound();
-                StartCoroutine(StartCountdown(endPhaseTime));
+                player1.EndingPhase();
+                player2.EndingPhase();
+                // StartCoroutine(StartCountdown(endPhaseTime));
+                
                 break;
 
             default:
                 throw new ArgumentOutOfRangeException("phase", currentPhase, null);
         }
-        player1.ResetSelectedButton();
-        player2.ResetSelectedButton();
+    }
+
+    private void EndPhase()
+    {
+        switch (currentPhase)
+        {
+            case PhaseName.SELECT_OPTION:
+                break;
+
+            case PhaseName.SELECT_ACTION:
+                break;
+
+            case PhaseName.END_PHASE:
+                player1.EndRound();
+                player2.EndRound();
+                break;
+
+            default:
+                throw new ArgumentOutOfRangeException("phase", currentPhase, null);
+        }
+        
     }
 
     private void GetInputPlayer1()
@@ -165,6 +268,33 @@ public class RoundManager : MonoBehaviour
                 break;
             default:
                 player.NoActionMode();
+                break;
+        }
+    }
+
+    private void LaunchChosenLine(PlayerController player, PlayerController target)
+    {
+        Debug.Log(player.selectedButton);
+        Punchline line;
+        switch (player.selectedButton)
+        {
+            case ButtonName.X:
+                line = player.playerPunchlines[0];
+                player.SayPunchline(line);
+                break;
+            case ButtonName.Y:
+                line = player.playerPunchlines[1];
+                player.SayPunchline(line);
+                break;
+            case ButtonName.B:
+                line = player.playerPunchlines[2];
+                player.SayPunchline(line);
+                break;
+            case ButtonName.A:
+
+                break;
+            default:
+                player.SayPunchline(noActionPunchline);
                 break;
         }
     }

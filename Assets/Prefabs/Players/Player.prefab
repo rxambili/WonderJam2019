@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 4247877736908843070}
   - component: {fileID: 4247877736908843065}
   - component: {fileID: 4247877736908843071}
+  - component: {fileID: 188470575}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,3 +93,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cede04a82ee6d034c96df014e848be0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPanel: {fileID: 0}
+  playerPunchlines:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &188470575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4247877736908843064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 731861942b3f28747b1289e3a959e371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueText: {fileID: 0}
+  canvas: {fileID: 0}

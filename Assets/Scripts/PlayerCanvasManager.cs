@@ -24,9 +24,6 @@ public class PlayerCanvasManager : MonoBehaviour
     public TextMeshProUGUI m_AbuttonText;
     public TextMeshProUGUI m_BbuttonText;
 
-    [Header("speech")]
-    public GameObject m_SpeechContainer;
-    public TextMeshProUGUI m_Speech;
 
     public void OptionMode()
     {

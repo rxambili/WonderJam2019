@@ -23,11 +23,15 @@ public class PlayerController : MonoBehaviour
     public int flow { get; set; }
 
     public ButtonName selectedButton { get; set; }
+
+    [HideInInspector]
     public Punchline[] playerPunchlines = new Punchline[3];
+    private DialogueManager dialogueManager;
     private ActionMode currentActionMode;
 
     void Start()
     {
+        dialogueManager = GetComponent<DialogueManager>();
         pressure = minPressure;
         flow = maxFlow;
         selectedButton = ButtonName.NONE;
@@ -111,6 +115,11 @@ public class PlayerController : MonoBehaviour
         currentActionMode = ActionMode.NOACTION;
     }
 
+    public void EndingPhase()
+    {
+        playerPanel.DisplayButtons(false);
+    }
+
     public ActionMode GetActionMode()
     {
         return currentActionMode;
@@ -119,5 +128,28 @@ public class PlayerController : MonoBehaviour
     public void ResetSelectedButton()
     {
         selectedButton = ButtonName.NONE;
+    }
+
+    public void SayPunchline(Punchline line)
+    {
+        dialogueManager.StartDialogue(line);
+    }
+
+    public bool IsTalking()
+    {
+        return dialogueManager.isTalking;
+    }
+
+    
+
+    public bool HasTalked()
+    {
+        return dialogueManager.hasTalked;
+    }
+
+    public void ResetDialogues()
+    {
+        dialogueManager.hasTalked = false;
+        dialogueManager.isTalking = false;
     }
 }
