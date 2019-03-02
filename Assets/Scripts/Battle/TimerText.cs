@@ -24,4 +24,9 @@ public class TimerText : MonoBehaviour
     {
         timer.text = time.ToString();
     }
+
+    private void Update()
+    {
+        
+    }
 }
