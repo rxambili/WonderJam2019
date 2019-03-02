@@ -9,6 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2803dc8cf7053349b35c30470091188, type: 3}
-  m_Name: Public
+  m_Script: {fileID: 11500000, guid: 65f5334a18d511a4b8a5c33c7bbc346a, type: 3}
+  m_Name: HypeMoins10
   m_EditorClassIdentifier: 
+  pressureDamage: 0
+  flowDamage: 0
+  pressureBoost: 0
+  flowBoost: 0
+  hype: -10
