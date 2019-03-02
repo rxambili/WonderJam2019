@@ -32,6 +32,10 @@ public class RoundManager : MonoBehaviour
     [SerializeField] private PhaseName currentPhase;
     [SerializeField] private int timer = 5;
 
+    public delegate void OnTimer(int time);
+
+    public static OnTimer onTimer;
+
     private PlayerController player1;
     private PlayerController player2;
 
@@ -49,6 +53,7 @@ public class RoundManager : MonoBehaviour
         while (timer > 0)
         {
             yield return new WaitForSeconds(1.0f);
+            onTimer(timer);
             timer--;
         }
     }
