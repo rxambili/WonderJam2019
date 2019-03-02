@@ -1,9 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+
+    [Header("Panel")] 
+    public GameObject player1Panel;
+    
+    
+    
     public static int maxPressure = 100;
     public static int minPressure = 0;
     public static int maxFlow = 100;
@@ -14,18 +19,10 @@ public class PlayerController : MonoBehaviour
     public int pressure { get; set; }
     public int flow { get; set; }
 
-
-    // Start is called before the first frame update
     void Start()
     {
         pressure = minPressure;
         flow = maxFlow;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void AddPressure(int amount)

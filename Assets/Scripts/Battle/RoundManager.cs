@@ -6,31 +6,26 @@ public class RoundManager : MonoBehaviour
 {
     public enum Phase
     {
-        SELECT_OPTION,
-        SELECT_ACTION,
-        END_PHASE
+        SELECT_OPTION, // Options : insultes, repos, public, ???
+        SELECT_ACTION, // Actions : insulte_1, insulte_2,...
+        END_PHASE // Calcul des dégâts
     }
-
-    private Phase phase;
-
+     
     [Header("Timer")] [SerializeField] private int optionTime;
     [SerializeField] private int actionTime;
     [SerializeField] private int endPhaseTime;
 
     [Header("Debug")] [SerializeField] private int round = 1;
+    [SerializeField] private Phase phase;
     [SerializeField] private int timer = 5;
 
     public delegate void OnPhase(Phase phase);
 
     public static OnPhase onPhase;
 
-    private void Awake()
-    {
-        onPhase += process;
-    }
-
     private void Start()
     {
+        onPhase += process;
         phase = Phase.SELECT_OPTION;
 
         StartCoroutine("countdown");
@@ -48,8 +43,6 @@ public class RoundManager : MonoBehaviour
             {
                 nextPhase();
             }
-
-            Debug.Log("Time: " + timer);
         }
     }
 
@@ -57,8 +50,7 @@ public class RoundManager : MonoBehaviour
     {
         if (phase == Phase.END_PHASE)
         {
-            phase = Phase.SELECT_OPTION;
-            round++;
+            nextRound();
         }
         else
         {
@@ -68,23 +60,26 @@ public class RoundManager : MonoBehaviour
         onPhase(phase);
     }
 
+    private void nextRound()
+    {
+        phase = Phase.SELECT_OPTION;
+        round++;
+    }
+
     private void process(Phase phase)
     {
         switch (phase)
         {
             case Phase.SELECT_OPTION:
                 timer = optionTime;
-                Debug.Log("OPTION");
                 break;
 
             case Phase.SELECT_ACTION:
                 timer = actionTime;
-                Debug.Log("ACTION");
                 break;
 
             case Phase.END_PHASE:
                 timer = endPhaseTime;
-                Debug.Log("END");
                 break;
 
             default:
