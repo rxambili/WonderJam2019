@@ -26,6 +26,12 @@ public class RoundManager : MonoBehaviour
     [SerializeField] private Punchline publicPunchline;
     [SerializeField] private Punchline reposPunchline;
 
+
+    [Header("ReadyText")]
+    [SerializeField] private ReadyText readyText1;
+    [SerializeField] private ReadyText readyText2;
+
+
     [Header("Debug")] [SerializeField] private int round = 1;
 
 
@@ -85,8 +91,7 @@ public class RoundManager : MonoBehaviour
     {
         GetInputPlayer1();
         GetInputPlayer2();
-
-        switch(currentPhase)
+        switch (currentPhase)
         {
             case PhaseName.SELECT_OPTION:
                 break;

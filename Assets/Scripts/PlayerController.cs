@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
 {
     [Header("UI")] 
     public PlayerCanvasManager playerPanel;
+    
+
 
     public static int maxPressure = 100;
     public static int minPressure = 0;
@@ -132,6 +134,7 @@ public class PlayerController : MonoBehaviour
 
     public void SayPunchline(Punchline line)
     {
+        ResetSelectedButton();
         dialogueManager.StartDialogue(line);
     }
 
