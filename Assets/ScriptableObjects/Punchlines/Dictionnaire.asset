@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
+  m_Name: Dictionnaire
+  m_EditorClassIdentifier: 
+  title: Dictionnaire
+  lines:
+  - Dans le dictionnaire
+  - "Ils ont pas trouv\xE9 l'mot pour te d\xE9crire"
+  - "Et y r\xE9fl\xE9chir les ferait bien trop souffrir"
+  flowCost: 20
+  category: 1
+  effects:
+  - {fileID: 11400000, guid: 98b23e103974cb842a5c6ed22f607f67, type: 2}
+  hasCounter: 0
+  counterLines: []

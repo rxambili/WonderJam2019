@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
+  m_Name: Mondes
+  m_EditorClassIdentifier: 
+  title: "Mondes parall\xE8les"
+  lines:
+  - "Parait qu'il existe une infinit\xE9 d'univers"
+  - "Mais y'en a pas un o\xF9 t'es meilleur que moi"
+  flowCost: 45
+  category: 0
+  effects:
+  - {fileID: 11400000, guid: 1715976b59f5892449b3d5036468c0c9, type: 2}
+  - {fileID: 11400000, guid: 8261c5873d0841447a90c601e18346fd, type: 2}
+  hasCounter: 1
+  counterLines:
+  - "Peut-\xEAtre qui y'en \xE0 un o\xF9 t'es dr\xF4le"

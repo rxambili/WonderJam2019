@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
+  m_Name: Grec
+  m_EditorClassIdentifier: 
+  title: Grec
+  lines:
+  - Regarde moi ce corps de dieu grec
+  flowCost: 40
+  category: 1
+  effects:
+  - {fileID: 11400000, guid: 8adb48e42da12ab47983b8f9bb6592c2, type: 2}
+  hasCounter: 1
+  counterLines:
+  - Boudha n'est pas un dieu grec

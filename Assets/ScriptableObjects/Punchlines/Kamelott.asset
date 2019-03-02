@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
+  m_Name: Kamelott
+  m_EditorClassIdentifier: 
+  title: Dire...Mal
+  lines:
+  - 'Non mais je crois qu''il faut qut''arretes de dire des trucs '
+  - Tu te fais du mal et pas qu'as toi
+  flowCost: 50
+  category: 0
+  effects:
+  - {fileID: 11400000, guid: 09fd890d1848f6d429eeff417b76bbaa, type: 2}
+  - {fileID: 11400000, guid: ca978e13cd1da6c4bb987f127767e56f, type: 2}
+  hasCounter: 0
+  counterLines: []
