@@ -1,11 +1,16 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OptionPhase 
+[Serializable]
+public class OptionPhase
 {
-    public void SetUp()
+
+
+    public void SetUp(PlayerController p1, PlayerController p2)
     {
-        
+        p1.OptionMode();
+        p2.OptionMode();
     }
 }

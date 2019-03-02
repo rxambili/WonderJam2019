@@ -4,29 +4,32 @@ using UnityEngine;
 
 public class RoundManager : MonoBehaviour
 {
-    public enum Phase
+    
+    public enum PhaseName
     {
         SELECT_OPTION, // Options : insultes, repos, public, ???
         SELECT_ACTION, // Actions : insulte_1, insulte_2,...
         END_PHASE // Calcul des dégâts
     }
+
+    public OptionPhase phaseOption;
      
     [Header("Timer")] [SerializeField] private int optionTime;
     [SerializeField] private int actionTime;
     [SerializeField] private int endPhaseTime;
 
     [Header("Debug")] [SerializeField] private int round = 1;
-    [SerializeField] private Phase phase;
+    [SerializeField] private PhaseName phase;
     [SerializeField] private int timer = 5;
 
-    public delegate void OnPhase(Phase phase);
+    public delegate void OnPhase(PhaseName phase);
 
     public static OnPhase onPhase;
 
     private void Start()
     {
         onPhase += process;
-        phase = Phase.SELECT_OPTION;
+        phase = PhaseName.SELECT_OPTION;
 
         StartCoroutine("countdown");
     }
@@ -48,7 +51,7 @@ public class RoundManager : MonoBehaviour
 
     public void nextPhase()
     {
-        if (phase == Phase.END_PHASE)
+        if (phase == PhaseName.END_PHASE)
         {
             nextRound();
         }
@@ -62,23 +65,23 @@ public class RoundManager : MonoBehaviour
 
     private void nextRound()
     {
-        phase = Phase.SELECT_OPTION;
+        phase = PhaseName.SELECT_OPTION;
         round++;
     }
 
-    private void process(Phase phase)
+    private void process(PhaseName phase)
     {
         switch (phase)
         {
-            case Phase.SELECT_OPTION:
+            case PhaseName.SELECT_OPTION:
                 timer = optionTime;
                 break;
 
-            case Phase.SELECT_ACTION:
+            case PhaseName.SELECT_ACTION:
                 timer = actionTime;
                 break;
 
-            case Phase.END_PHASE:
+            case PhaseName.END_PHASE:
                 timer = endPhaseTime;
                 break;
 
