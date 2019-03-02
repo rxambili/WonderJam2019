@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65f5334a18d511a4b8a5c33c7bbc346a, type: 3}
+  m_Name: AddPressure30
+  m_EditorClassIdentifier: 
+  pressureDamage: 30
+  flowDamage: 0
+  pressureBoost: 0
+  flowBoost: 0
+  hype: 10
