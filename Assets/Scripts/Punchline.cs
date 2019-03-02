@@ -11,7 +11,10 @@ public enum PunchlineCategory{
 public class Punchline : ScriptableObject
 {
     public string title = "...";
-    public string line = "...";
+
+    [TextArea(3, 10)]
+    public string[] lines;
+
     public int flowCost = 0;
     public PunchlineCategory category;
 
@@ -19,6 +22,7 @@ public class Punchline : ScriptableObject
 
     public bool hasCounter = false;
 
-    public string counter = "...";
+    [TextArea(3, 10)]
+    public string[] counterLines;
     
 }
