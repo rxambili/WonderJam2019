@@ -26,6 +26,10 @@ public class RoundManager : MonoBehaviour
 
     public static OnPhase onPhase;
 
+    public delegate void OnTimer(int time);
+
+    public static OnTimer onTimer;
+
     private void Start()
     {
         onPhase += process;
@@ -39,6 +43,7 @@ public class RoundManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(1);
+            onTimer(timer);
             timer--;
 
             // TODO: gérer aussi les deux joueurs qui font une action avant le timer
