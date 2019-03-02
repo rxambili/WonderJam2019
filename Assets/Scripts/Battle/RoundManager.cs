@@ -42,7 +42,7 @@ public class RoundManager : MonoBehaviour
     private void Start()
     {
         currentPhase = PhaseName.SELECT_OPTION;
-        player1 = GameObject.FindGameObjectWithTag("Player1").GetComponent<PlayerController>() ;
+        player1 = GameObject.FindGameObjectWithTag("Player1").GetComponent<PlayerController>();
         player2 = GameObject.FindGameObjectWithTag("Player2").GetComponent<PlayerController>();
         InitializePhase();
     }
@@ -105,12 +105,15 @@ public class RoundManager : MonoBehaviour
                             break;
                         case ActionMode.FLOW:
                             player1.SayPunchline(reposPunchline);
+                            ApplyEffects(reposPunchline, player1, player2);
                             break;
                         case ActionMode.PUBLIC:
                             player1.SayPunchline(publicPunchline);
+                            ApplyEffects(publicPunchline, player1, player2);
                             break;
                         case ActionMode.NOACTION:
                             player1.SayPunchline(noActionPunchline);
+                            ApplyEffects(noActionPunchline, player1, player2);
                             break;
                         default:
                             break;
@@ -127,12 +130,15 @@ public class RoundManager : MonoBehaviour
                             break;
                         case ActionMode.FLOW:
                             player2.SayPunchline(reposPunchline);
+                            ApplyEffects(reposPunchline, player2, player1);
                             break;
                         case ActionMode.PUBLIC:
                             player2.SayPunchline(publicPunchline);
+                            ApplyEffects(publicPunchline, player2, player1);
                             break;
                         case ActionMode.NOACTION:
                             player2.SayPunchline(noActionPunchline);
+                            ApplyEffects(noActionPunchline, player2, player1);
                             break;
                         default:
                             break;
@@ -280,7 +286,7 @@ public class RoundManager : MonoBehaviour
     private void LaunchChosenLine(PlayerController player, PlayerController target)
     {
         Debug.Log(player.selectedButton);
-        Punchline line;
+        Punchline line = noActionPunchline;
         switch (player.selectedButton)
         {
             case ButtonName.X:
@@ -299,9 +305,10 @@ public class RoundManager : MonoBehaviour
 
                 break;
             default:
-                player.SayPunchline(noActionPunchline);
+                player.SayPunchline(line);
                 break;
         }
+        ApplyEffects(line, player, target);
     }
 
     private void SelectAvailablePunchlines()
@@ -322,6 +329,19 @@ public class RoundManager : MonoBehaviour
             int chosenIndex = Random.Range(0, listPunchlines.Count);
             player2.playerPunchlines[i] = listPunchlines[chosenIndex];
             listPunchlines.RemoveAt(chosenIndex);
+        }
+    }
+
+    private void ApplyEffects(Punchline line, PlayerController source, PlayerController target)
+    {
+        source.AddFlow(-line.flowCost);
+        foreach (Effect e in line.effects)
+        {
+            target.AddPressure(e.pressureDamage);
+            target.AddFlow(-e.flowDamage);
+            source.AddPressure(e.pressureBoost);
+            source.AddFlow(e.flowBoost);
+            // TODO: public/hype
         }
     }
 }
