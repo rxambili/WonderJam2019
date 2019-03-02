@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Jack
   m_EditorClassIdentifier: 
-  title: '...'
-  lines: []
-  flowCost: 0
+  title: Jack
+  lines:
+  - Ha, c'est de la pickette Jack
+  - Tu sais pas jouer t'es MAUVAIIIIIS
+  flowCost: 20
   category: 0
-  effects: []
+  effects:
+  - {fileID: 11400000, guid: 8870da4604c64584eab6fac8e9e821bc, type: 2}
   hasCounter: 0
   counterLines: []

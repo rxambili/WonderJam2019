@@ -12,10 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Mondes
   m_EditorClassIdentifier: 
-  title: '...'
-  lines: []
-  flowCost: 0
+  title: "Mondes parall\xE8les"
+  lines:
+  - "Parait qu'il existe une infinit\xE9 d'univers"
+  - "Mais y'en a pas un o\xF9 t'es meilleur que moi"
+  flowCost: 45
   category: 0
-  effects: []
-  hasCounter: 0
-  counterLines: []
+  effects:
+  - {fileID: 11400000, guid: 1715976b59f5892449b3d5036468c0c9, type: 2}
+  - {fileID: 11400000, guid: 8261c5873d0841447a90c601e18346fd, type: 2}
+  hasCounter: 1
+  counterLines:
+  - "Peut-\xEAtre qui y'en \xE0 un o\xF9 t'es dr\xF4le"

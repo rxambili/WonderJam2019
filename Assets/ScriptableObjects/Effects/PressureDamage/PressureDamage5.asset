@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 65f5334a18d511a4b8a5c33c7bbc346a, type: 3}
-  m_Name: Effect
+  m_Name: PressureDamage5
   m_EditorClassIdentifier: 
   pressureDamage: 0
   flowDamage: 0

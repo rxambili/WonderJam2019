@@ -12,10 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Pieds
   m_EditorClassIdentifier: 
-  title: '...'
-  lines: []
-  flowCost: 0
+  title: Pieds...Niveau
+  lines:
+  - "Tu m\xE9rite pas de poser les pieds sur cette sc\xE8ne"
+  - T'as pas le niveau
+  flowCost: 50
   category: 0
-  effects: []
-  hasCounter: 0
-  counterLines: []
+  effects:
+  - {fileID: 11400000, guid: 7d28f629f81a0104198529b42c70681a, type: 2}
+  - {fileID: 11400000, guid: 8106f5538e8e4634385d090ab4e862e0, type: 2}
+  hasCounter: 1
+  counterLines:
+  - "Je met mes pieds ou\xF9 je veux"
+  - Et c'est souvent dans la gueule

@@ -12,10 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Pitoyable
   m_EditorClassIdentifier: 
-  title: '...'
-  lines: []
-  flowCost: 0
+  title: Pitoyable
+  lines:
+  - 'Tu es le clasheur le plus pitoyable '
+  - "Dont on m'ai jamais parl\xE9"
+  flowCost: 40
   category: 0
-  effects: []
-  hasCounter: 0
-  counterLines: []
+  effects:
+  - {fileID: 11400000, guid: 09fd890d1848f6d429eeff417b76bbaa, type: 2}
+  hasCounter: 1
+  counterLines:
+  - Au moins on parle de moi
+  - "J'ai jamais entendu parl\xE9 de toi"

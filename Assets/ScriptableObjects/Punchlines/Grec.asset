@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Grec
   m_EditorClassIdentifier: 
-  title: '...'
-  lines: []
-  flowCost: 0
-  category: 0
-  effects: []
-  hasCounter: 0
-  counterLines: []
+  title: Grec
+  lines:
+  - Regarde moi ce corps de dieu grec
+  flowCost: 40
+  category: 1
+  effects:
+  - {fileID: 11400000, guid: 8adb48e42da12ab47983b8f9bb6592c2, type: 2}
+  hasCounter: 1
+  counterLines:
+  - Boudha n'est pas un dieu grec

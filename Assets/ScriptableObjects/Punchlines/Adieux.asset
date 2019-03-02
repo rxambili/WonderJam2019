@@ -12,10 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Adieux
   m_EditorClassIdentifier: 
-  title: '...'
-  lines: []
-  flowCost: 0
-  category: 0
-  effects: []
+  title: Adieux
+  lines:
+  - "Tout mes proches arr\xEAte pas"
+  - "De me comparer \xE0 un dieux"
+  - Malheureusement pour toi
+  - C'est le moment d'faire tes adieux
+  flowCost: 35
+  category: 1
+  effects:
+  - {fileID: 11400000, guid: 8870da4604c64584eab6fac8e9e821bc, type: 2}
+  - {fileID: 11400000, guid: 98b23e103974cb842a5c6ed22f607f67, type: 2}
   hasCounter: 0
   counterLines: []

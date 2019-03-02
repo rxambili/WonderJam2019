@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Age
   m_EditorClassIdentifier: 
-  title: '...'
-  lines: []
-  flowCost: 0
+  title: Age...Talent
+  lines:
+  - "J'ai pas la moiti\xE9 de ton \xE2ge"
+  - T'as pas lquart de mon talent
+  flowCost: 40
   category: 0
-  effects: []
+  effects:
+  - {fileID: 11400000, guid: 09fd890d1848f6d429eeff417b76bbaa, type: 2}
+  - {fileID: 11400000, guid: 8106f5538e8e4634385d090ab4e862e0, type: 2}
   hasCounter: 0
   counterLines: []

@@ -16,4 +16,4 @@ MonoBehaviour:
   flowDamage: 0
   pressureBoost: 0
   flowBoost: 0
-  hype: 0
+  hype: 35

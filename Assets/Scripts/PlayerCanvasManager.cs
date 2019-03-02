@@ -10,7 +10,8 @@ public enum ButtonName
     X,
     Y,
     A,
-    B
+    B,
+    NONE
 }
 
 public class PlayerCanvasManager : MonoBehaviour
