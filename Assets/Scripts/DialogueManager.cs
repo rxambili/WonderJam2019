@@ -6,26 +6,44 @@ using UnityEngine;
 public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI dialogueText;
-    public Punchline punchline;
     //public Animator animator;
-    public Canvas canvas;
+    public GameObject canvas;
     private Queue<string> sentences;
+    public bool isTalking = false;
+    public bool hasTalked = false;
 
     // Use this for initialization
     void Start()
     {
         sentences = new Queue<string>();
-        canvas.enabled = false;
-        StartDialogue(punchline);
+        canvas.SetActive(false);
     }
 
     public void StartDialogue(Punchline punchline)
     {
         // animator.SetBool("IsOpen", true);
-        canvas.enabled = true;
+        canvas.SetActive(true);
+        isTalking = true;
+        hasTalked = false;
         sentences.Clear();
 
         foreach (string line in punchline.lines)
+        {
+            sentences.Enqueue(line);
+        }
+
+        DisplayNextSentence();
+    }
+
+    public void StartDialogue(string[] lines)
+    {
+        // animator.SetBool("IsOpen", true);
+        canvas.SetActive(true);
+        isTalking = true;
+        hasTalked = false;
+        sentences.Clear();
+
+        foreach (string line in lines)
         {
             sentences.Enqueue(line);
         }
@@ -60,7 +78,9 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
-        canvas.enabled = false;
+        canvas.SetActive(false);
+        isTalking = false;
+        hasTalked = true;
         // animator.SetBool("IsOpen", false);
     }
 

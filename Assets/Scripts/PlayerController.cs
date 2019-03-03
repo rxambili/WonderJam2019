@@ -1,10 +1,17 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-
+public enum ActionMode
+{
+    CLASH,
+    FLOW,
+    PUBLIC,
+    NOACTION
+}
 public class PlayerController : MonoBehaviour
 {
     [Header("UI")] 
-    public PlayerCanvasManager player1Panel;
+    public PlayerCanvasManager playerPanel;
+
     public static int maxPressure = 100;
     public static int minPressure = 0;
     public static int maxFlow = 100;
@@ -15,23 +22,26 @@ public class PlayerController : MonoBehaviour
     public int pressure { get; set; }
     public int flow { get; set; }
 
+    public ButtonName selectedButton { get; set; }
+
+    [HideInInspector]
+    public Punchline[] playerPunchlines = new Punchline[3];
+    [HideInInspector]
+    public Punchline selectedLine;
+
+    private DialogueManager dialogueManager;
+    private ActionMode currentActionMode;
+    
+
     void Start()
     {
+        dialogueManager = GetComponent<DialogueManager>();
         pressure = minPressure;
         flow = maxFlow;
+        selectedButton = ButtonName.NONE;
 
     }
 
-
-    bool m_SelectionActive = false;
-    ButtonName m_currentSelection;
-    void Update()
-    {
-        if (m_SelectionActive)
-        {
-                //retenir l'input
-        }
-    }
 
     public void AddPressure(int amount)
     {
@@ -69,38 +79,110 @@ public class PlayerController : MonoBehaviour
     public bool EndRound()
     {
         AddFlow(regenFlow);
+        playerPanel.DisplayButtons(false);
         return pressure == maxPressure;
     }
 
 
     public void OptionMode()
     {
-        player1Panel.OptionMode();
-
-        player1Panel.DisplayButtons(true);
-        m_SelectionActive = true;
+        playerPanel.DisplayButtons(true);
+        playerPanel.OptionMode();       
     }
 
     public void ClashMode()
     {
-        player1Panel.SetButtonText(ButtonName.X, "Clash1");
-        player1Panel.SetButtonText(ButtonName.Y, "Clash2");
-        player1Panel.SetButtonText(ButtonName.B, "Clash3");
-        player1Panel.SetButtonText(ButtonName.A, "Clash4");
+        playerPanel.DisplayButtons(true);
+        playerPanel.SetButtonText(ButtonName.X, playerPunchlines[0].title);
+        playerPanel.SetButtonText(ButtonName.Y, playerPunchlines[1].title);
+        playerPanel.SetButtonText(ButtonName.B, playerPunchlines[2].title);
+        playerPanel.SetButtonText(ButtonName.A, "Répartie");
+        currentActionMode = ActionMode.CLASH;
 
-        m_SelectionActive = true;
+        if (playerPunchlines[0].flowCost > flow)
+        {
+            playerPanel.DisableButton(ButtonName.X);
+        }
+        if (playerPunchlines[1].flowCost > flow)
+        {
+            playerPanel.DisableButton(ButtonName.Y);
+        }
+        if (playerPunchlines[2].flowCost > flow)
+        {
+            playerPanel.DisableButton(ButtonName.B);
+        }
+
+
     }
 
     public void RecupFlowMode()
     {
-        m_SelectionActive = false;
-        player1Panel.DisplayButtons(false);
+        playerPanel.DisplayButtons(false);
+        currentActionMode = ActionMode.FLOW;
     }
 
     public void PublicMode()
     {
-        m_SelectionActive = false;
-        player1Panel.DisplayButtons(false);
+        playerPanel.DisplayButtons(false);
+        currentActionMode = ActionMode.PUBLIC;
     }
 
+    public void NoActionMode()
+    {
+        playerPanel.DisplayButtons(false);
+        currentActionMode = ActionMode.NOACTION;
+    }
+
+    public void EndingPhase()
+    {
+        playerPanel.DisplayButtons(false);
+    }
+
+    public ActionMode GetActionMode()
+    {
+        return currentActionMode;
+    }
+
+    public void ResetSelectedButton()
+    {
+        selectedButton = ButtonName.NONE;
+    }
+
+    public void SayPunchline(Punchline line)
+    {
+        dialogueManager.StartDialogue(line);
+    }
+
+    public void SayPunchline()
+    {
+        dialogueManager.StartDialogue(selectedLine);
+    }
+
+    public void SayPunchline(string[] line)
+    {
+        dialogueManager.StartDialogue(line);
+    }
+
+    public bool IsTalking()
+    {
+        return dialogueManager.isTalking;
+    }
+
+    
+
+    public bool HasTalked()
+    {
+        return dialogueManager.hasTalked;
+    }
+
+    public void ResetDialogues()
+    {
+        dialogueManager.hasTalked = false;
+        dialogueManager.isTalking = false;
+    }
+
+    public bool IsButtonDisabled(ButtonName button)
+    {
+        return playerPanel.IsButtonDisabled(button);
+    }
 }

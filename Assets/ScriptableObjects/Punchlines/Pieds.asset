@@ -22,6 +22,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7d28f629f81a0104198529b42c70681a, type: 2}
   - {fileID: 11400000, guid: 8106f5538e8e4634385d090ab4e862e0, type: 2}
   hasCounter: 1
-  counterLines:
-  - "Je met mes pieds ou\xF9 je veux"
-  - Et c'est souvent dans la gueule
+  counter: {fileID: 11400000, guid: 675145e4c60df37469d5c39ba0482fad, type: 2}

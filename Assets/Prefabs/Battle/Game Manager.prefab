@@ -46,5 +46,41 @@ MonoBehaviour:
   optionTime: 5
   actionTime: 10
   endPhaseTime: 5
+  punchlines:
+  - {fileID: 11400000, guid: f57926086b006e54ca403b9d583daba1, type: 2}
+  - {fileID: 11400000, guid: 6c57c5f5ced509341b061937d26fa5ba, type: 2}
+  - {fileID: 11400000, guid: 9dd111e6017d42046b42d7c525770a49, type: 2}
+  - {fileID: 11400000, guid: ee5f5463f8635084a9eb453b617e2d92, type: 2}
+  - {fileID: 11400000, guid: 31cd541d546a4824c9b22d96e4113196, type: 2}
+  - {fileID: 11400000, guid: e6a43a3b7b555a1458ba113bd1c89e2b, type: 2}
+  - {fileID: 11400000, guid: ff43e690316a5944bb647aac30bd5557, type: 2}
+  - {fileID: 11400000, guid: 12238b3c140b6ad4da55a351db699fcb, type: 2}
+  - {fileID: 11400000, guid: 5e80e78197023d041900540bcf2b1ef3, type: 2}
+  - {fileID: 11400000, guid: 0c2402a3939023f4a867f385aa708d42, type: 2}
+  - {fileID: 11400000, guid: b5c53cd474e8ef54685e2522f5caf19f, type: 2}
+  - {fileID: 11400000, guid: 46df1896c8bae64409a192828f815ff6, type: 2}
+  - {fileID: 11400000, guid: c2ee2b2f391ea4a488f1ce55c7e16790, type: 2}
+  - {fileID: 11400000, guid: 5187798c07bea224f94b3ad1d30aa12a, type: 2}
+  - {fileID: 11400000, guid: 5b1ad25cb223c954db50ea534db6a57b, type: 2}
+  - {fileID: 11400000, guid: 8a744c39953e1a34b9e22236450a5d9d, type: 2}
+  - {fileID: 11400000, guid: 5db77f9542af1ed439b3807541b07a2d, type: 2}
+  - {fileID: 11400000, guid: c6deb373a5917ce43acd45116bc1e352, type: 2}
+  - {fileID: 11400000, guid: e12fb83e57128974f946d31004ebdc9f, type: 2}
+  - {fileID: 11400000, guid: 2ad5b65111b9c414e9899a760466888c, type: 2}
+  - {fileID: 11400000, guid: 5c62880c362851d4fb77d8bcafd9d163, type: 2}
+  - {fileID: 11400000, guid: 33b51666dc7db974dab3758985b46668, type: 2}
+  - {fileID: 11400000, guid: eb5387c64b90dfe488d699d43a6f3a81, type: 2}
+  - {fileID: 11400000, guid: 665047d71341b8544b6ed640f9c8d9ce, type: 2}
+  - {fileID: 11400000, guid: 77fa739d95e198b419836a8b82b8635d, type: 2}
+  - {fileID: 11400000, guid: d1eadbf993459f747be436b530a65775, type: 2}
+  - {fileID: 11400000, guid: 3be656053d3c9994e8f3589cb1e859b9, type: 2}
+  - {fileID: 11400000, guid: 1aa32beee935d00408658b68a02761b1, type: 2}
+  - {fileID: 11400000, guid: 068b2326c7d6d7042ab731f98eb05fd8, type: 2}
+  - {fileID: 11400000, guid: 96e79e7c07932ce4daa6f515d824ec8b, type: 2}
+  noActionPunchline: {fileID: 11400000, guid: 3d5cb95cb335fcd4480acaace174c771, type: 2}
+  publicPunchline: {fileID: 11400000, guid: 5b567489b3249964ebc599af7bca6894, type: 2}
+  reposPunchline: {fileID: 11400000, guid: 4295b06de3ad4be4e81dd5468997f9e6, type: 2}
+  failedCounter: {fileID: 11400000, guid: 8297c6d80959a80458ed3545e2e86bbf, type: 2}
   round: 1
+  currentPhase: 0
   timer: 5

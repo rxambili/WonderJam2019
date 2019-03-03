@@ -20,6 +20,8 @@ MonoBehaviour:
   - "Tu l'as m\xEAme pas fais en voiture"
   flowCost: 50
   category: 1
-  effects: []
+  effects:
+  - {fileID: 11400000, guid: 970f42e8ea7e90449bcf50b34617633b, type: 2}
+  - {fileID: 11400000, guid: c05977f7d2bda594698a0b856c359bf5, type: 2}
   hasCounter: 0
-  counterLines: []
+  counter: {fileID: 0}
