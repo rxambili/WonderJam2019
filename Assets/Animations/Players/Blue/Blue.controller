@@ -9,13 +9,13 @@ AnimatorController:
   m_Name: Blue
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Hit
+  - m_Name: Clashing
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: Clashing
+  - m_Name: Hit
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -321,7 +321,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: Pressure
-    m_EventTreshold: 65
+    m_EventTreshold: 66
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102272083581842922}
   m_Solo: 0
@@ -693,7 +693,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Pressured Hit
+  m_Name: Pressured Clash
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -740,7 +740,7 @@ AnimatorStateMachine:
     m_Position: {x: 648, y: 168, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102467918337727714}
-    m_Position: {x: 216, y: 336, z: 0}
+    m_Position: {x: 288, y: 396, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102609195710658860}
     m_Position: {x: 648, y: 72, z: 0}
