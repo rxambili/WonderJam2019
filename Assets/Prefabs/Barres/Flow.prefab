@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -100, y: -449}
+  m_AnchoredPosition: {x: -70, y: -449}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5164071213643788088
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 1026
+  m_textAlignment: 1025
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -359,4 +359,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf761a51e6b85e47b34ffdc7bfa37bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pourcentageText: {fileID: 7077596319045023721}
   player: {fileID: 0}
