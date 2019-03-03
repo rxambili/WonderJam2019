@@ -1,4 +1,4 @@
-﻿using UnityEditor.Animations;
+﻿
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
@@ -6,7 +6,7 @@ public class StartTitleAnimation : MonoBehaviour
 {
     private Animator animator;
 
-    [SerializeField] private AnimatorController titleToBattle;
+    [SerializeField] private Animator titleToBattle;
 
     public GameEvent onTitleAppeared;
     public GameEvent onReadyFight;
@@ -18,7 +18,7 @@ public class StartTitleAnimation : MonoBehaviour
 
     public void setReadyFightAnimator()
     {
-        animator.runtimeAnimatorController = Resources.Load<AnimatorController>("Animations/Title to battle");
+        animator.runtimeAnimatorController = (RuntimeAnimatorController) Resources.Load("Animations/Title to battle");
         Debug.Log(animator.runtimeAnimatorController);
     }
 
