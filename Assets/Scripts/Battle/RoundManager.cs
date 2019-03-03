@@ -13,6 +13,7 @@ public class RoundManager : MonoBehaviour
         END_PHASE // Calcul des dégâts
     }
 
+    public Punchline biteTheDust;
 
     [Header("Timer")] [SerializeField] private int optionTime;
     [SerializeField] private int actionTime;
@@ -246,21 +247,25 @@ public class RoundManager : MonoBehaviour
     {
         if (Input.GetButtonDown("Player1 Button A") && !player1.IsButtonDisabled(ButtonName.A))
         {
+            SoundButton.playOkButtonSound();
             player1.selectedButton = ButtonName.A;
         }
 
         if (Input.GetButtonDown("Player1 Button B") && !player1.IsButtonDisabled(ButtonName.B))
         {
+            SoundButton.playOkButtonSound();
             player1.selectedButton = ButtonName.B;
         }
 
         if (Input.GetButtonDown("Player1 Button X") && !player1.IsButtonDisabled(ButtonName.X))
         {
+            SoundButton.playOkButtonSound();
             player1.selectedButton = ButtonName.X;
         }
 
         if (Input.GetButtonDown("Player1 Button Y") && !player1.IsButtonDisabled(ButtonName.Y))
         {
+            SoundButton.playOkButtonSound();
             player1.selectedButton = ButtonName.Y;
         }
     }
@@ -269,21 +274,25 @@ public class RoundManager : MonoBehaviour
     {
         if (Input.GetButtonDown("Player2 Button A") && !player2.IsButtonDisabled(ButtonName.A))
         {
+            SoundButton.playOkButtonSound();
             player2.selectedButton = ButtonName.A;
         }
 
         if (Input.GetButtonDown("Player2 Button B") && !player2.IsButtonDisabled(ButtonName.B))
         {
+            SoundButton.playOkButtonSound();
             player2.selectedButton = ButtonName.B;
         }
 
         if (Input.GetButtonDown("Player2 Button X") && !player2.IsButtonDisabled(ButtonName.X))
         {
+            SoundButton.playOkButtonSound();
             player2.selectedButton = ButtonName.X;
         }
 
         if (Input.GetButtonDown("Player2 Button Y") && !player2.IsButtonDisabled(ButtonName.Y))
         {
+            SoundButton.playOkButtonSound();
             player2.selectedButton = ButtonName.Y;
         }
     }
@@ -439,7 +448,7 @@ public class RoundManager : MonoBehaviour
 
         if (totalPressure > 0)
         {
-            target.takeHit();
+            target.takeHit(totalPressure);
         }
     }
 
@@ -488,11 +497,15 @@ public class RoundManager : MonoBehaviour
         else if (player1Dead)
         {
             endManager.WinPlayer2();
+            player2.selectedLine = biteTheDust;
+            player2.SayPunchline();
         }
 
         else if (player2Dead)
         {
             endManager.WinPlayer1();
+            player1.selectedLine = biteTheDust;
+            player1.SayPunchline();
         }
 
         gameFinished = true;

@@ -14,6 +14,8 @@ public enum ActionMode
 [RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour
 {
+    [Header("Popopo")] public PopopoManager popopo;
+
     [Header("UI")] public PlayerCanvasManager playerPanel;
 
     private Animator animator;
@@ -32,7 +34,6 @@ public class PlayerController : MonoBehaviour
 
     public ButtonName selectedButton { get; set; }
 
-   
 
     [HideInInspector] public Punchline[] playerPunchlines = new Punchline[3];
     [HideInInspector] public Punchline selectedLine;
@@ -48,7 +49,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         dialogueManager = GetComponent<DialogueManager>();
-        
+
         Initialize();
     }
 
@@ -63,7 +64,6 @@ public class PlayerController : MonoBehaviour
 
     public void Initialize()
     {
-        
         pressure = minPressure;
         flow = maxFlow;
         selectedButton = ButtonName.NONE;
@@ -195,7 +195,7 @@ public class PlayerController : MonoBehaviour
     public void SayPunchline()
     {
         ResetSelectedButton();
-        
+
         dialogueManager.StartDialogue(selectedLine);
     }
 
@@ -254,28 +254,35 @@ public class PlayerController : MonoBehaviour
         return playerPanel.IsButtonDisabled(button);
     }
 
-    public void takeHit()
+    public void takeHit(int amount)
     {
         isDoingSomething = true;
-        
-        StartCoroutine(playAnimation("Hit", 1.5f));
-        animator.SetInteger("Pressure", pressure);
-        
 
-        // TODO: sfx
+        animator.SetInteger("Pressure", pressure);
+
+        if (amount > 30)
+        {
+            StartCoroutine(playAnimation("Hit", 3f));
+            popopo.playLongPopopo();
+        }
+        else
+        {
+            StartCoroutine(playAnimation("Hit", 1.5f));
+            popopo.playShortPopopo();
+        }
     }
 
     private IEnumerator playAnimation(string animParam, float time)
     {
         float currentTime = 0;
         animator.SetBool(animParam, true);
-        
+
         while (currentTime < time)
         {
             currentTime += Time.deltaTime;
             yield return null;
         }
-        
+
         animator.SetBool(animParam, false);
         isDoingSomething = false;
     }
@@ -285,5 +292,4 @@ public class PlayerController : MonoBehaviour
     {
         playerPanel.DisplayButtons(false);
     }
-
 }

@@ -28,10 +28,12 @@ public class EndManager : MonoBehaviour
             if (Input.GetButtonDown("Player1 Button A") || Input.GetButtonDown("Player2 Button A"))
             {
                 //restartGame();
+                SoundButton.playOkButtonSound();
                 SceneManager.LoadScene(0);
             }
             else if(Input.GetButtonDown("Player1 Button B") || Input.GetButtonDown("Player2 Button B"))
             {
+                SoundButton.playOkButtonSound();
                 Application.Quit();
             }
             
