@@ -158,8 +158,22 @@ public class RoundManager : MonoBehaviour
         }
         else
         {
-            GetInputPlayer1();
-            GetInputPlayer2();
+            if (currentPhase == PhaseName.SELECT_ACTION)
+            {
+                if (player1.GetActionMode() == ActionMode.CLASH)
+                {
+                    GetInputPlayer1();
+                }
+                if (player2.GetActionMode() == ActionMode.CLASH)
+                {
+                    GetInputPlayer2();
+                }
+            }
+            else
+            {
+                GetInputPlayer1();
+                GetInputPlayer2();
+            }
         }
 
         if (timer < 0 && currentPhase != PhaseName.END_PHASE)
@@ -373,6 +387,8 @@ public class RoundManager : MonoBehaviour
                 player1.selectedLine.effects = new List<Effect>();
             }
         }
+        player1.ResetSelectedButton();
+        player2.ResetSelectedButton();
     }
 
     private void SelectAvailablePunchlines()
