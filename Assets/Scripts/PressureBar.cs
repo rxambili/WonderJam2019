@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PressureBar : MonoBehaviour
 {
     private Image pressureBar;
-    public TextMeshProUGUI pourcentageText;
+    // public TextMeshProUGUI pourcentageText;
     public PlayerController player; 
 
     // Start is called before the first frame update
@@ -20,6 +20,6 @@ public class PressureBar : MonoBehaviour
     void Update()
     {
         pressureBar.fillAmount = (float)player.pressure/100;
-        pourcentageText.text = "" + player.pressure + "/100";
+        // pourcentageText.text = "" + player.pressure + "/100";
     }
 }
