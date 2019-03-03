@@ -83,8 +83,6 @@ MonoBehaviour:
   publicPunchline: {fileID: 11400000, guid: 5b567489b3249964ebc599af7bca6894, type: 2}
   reposPunchline: {fileID: 11400000, guid: 4295b06de3ad4be4e81dd5468997f9e6, type: 2}
   failedCounter: {fileID: 11400000, guid: 8297c6d80959a80458ed3545e2e86bbf, type: 2}
-  readyText1: {fileID: 0}
-  readyText2: {fileID: 0}
   round: 1
   currentPhase: 0
   timer: 5

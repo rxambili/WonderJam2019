@@ -14,7 +14,6 @@ public class RoundManager : MonoBehaviour
         END_PHASE // Calcul des dégâts
     }
 
-    public OptionPhase phaseOption;
      
     [Header("Timer")] [SerializeField] private int optionTime;
     [SerializeField] private int actionTime;
@@ -28,16 +27,15 @@ public class RoundManager : MonoBehaviour
     [SerializeField] private Punchline failedCounter;
 
 
-    [Header("ReadyText")]
-    [SerializeField] private ReadyText readyText1;
-    [SerializeField] private ReadyText readyText2;
-
-
     [Header("Debug")] [SerializeField] private int round = 1;
 
 
     [SerializeField] private PhaseName currentPhase;
     [SerializeField] private int timer = 5;
+
+    public int audienceHype = 100;
+    public static int maxAudienceHype = 200;
+    public static int minAudienceHype = 1;
 
     private EndManager endManager;
 
@@ -279,7 +277,12 @@ public class RoundManager : MonoBehaviour
                 player1.selectedLine = reposPunchline;
                 break;
             case ActionMode.PUBLIC:
-                player1.selectedLine = publicPunchline;
+                player1.selectedLine = Instantiate(publicPunchline);
+                Effect publicEffect = new Effect();
+                publicEffect.hype = audienceHype - (maxAudienceHype - minAudienceHype + 1) / 2;
+                publicEffect.pressureBoost = publicEffect.hype;
+                player1.selectedLine.effects = new List<Effect>();
+                player1.selectedLine.effects.Add(publicEffect);
                 break;
             case ActionMode.NOACTION:
                 player1.selectedLine = noActionPunchline;
@@ -297,7 +300,12 @@ public class RoundManager : MonoBehaviour
                 player2.selectedLine = reposPunchline;
                 break;
             case ActionMode.PUBLIC:
-                player2.selectedLine = publicPunchline;
+                player2.selectedLine = Instantiate(publicPunchline);
+                Effect publicEffect = new Effect();
+                publicEffect.hype = -(audienceHype - (maxAudienceHype - minAudienceHype + 1) / 2);
+                publicEffect.pressureBoost = publicEffect.hype;
+                player2.selectedLine.effects = new List<Effect>();
+                player2.selectedLine.effects.Add(publicEffect);
                 break;
             case ActionMode.NOACTION:
                 player2.selectedLine = noActionPunchline;
@@ -375,7 +383,15 @@ public class RoundManager : MonoBehaviour
             target.AddFlow(-e.flowDamage);
             source.AddPressure(e.pressureBoost);
             source.AddFlow(e.flowBoost);
-            // TODO: public/hype
+            
+            if (source == player1)
+            {
+                AddHype(-e.hype);
+            }
+            if (source == player2)
+            {
+                AddHype(e.hype);
+            }
         }
     }
 
@@ -399,6 +415,19 @@ public class RoundManager : MonoBehaviour
             default:
                 player.selectedLine = noActionPunchline;
                 break;
+        }
+    }
+
+    public void AddHype(int amount)
+    {
+        audienceHype += amount;
+        if (audienceHype > maxAudienceHype)
+        {
+            audienceHype = maxAudienceHype;
+        }
+        if (audienceHype < minAudienceHype)
+        {
+            audienceHype = minAudienceHype;
         }
     }
 }
