@@ -17,7 +17,7 @@ MonoBehaviour:
   - "Tout mes proches arr\xEAte pas de me comparer \xE0 un dieux"
   - Malheureusement pour toi, c'est le moment d'faire tes adieux
   flowCost: 35
-  category: 1
+  category: 2
   effects:
   - {fileID: 11400000, guid: 8870da4604c64584eab6fac8e9e821bc, type: 2}
   - {fileID: 11400000, guid: 98b23e103974cb842a5c6ed22f607f67, type: 2}

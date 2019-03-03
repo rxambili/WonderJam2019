@@ -18,7 +18,7 @@ MonoBehaviour:
   - Tu es le bouffon
   - Je suis le roi
   flowCost: 60
-  category: 1
+  category: 2
   effects:
   - {fileID: 11400000, guid: 1715976b59f5892449b3d5036468c0c9, type: 2}
   - {fileID: 11400000, guid: c05977f7d2bda594698a0b856c359bf5, type: 2}

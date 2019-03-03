@@ -18,7 +18,7 @@ MonoBehaviour:
   - Mais vas-y fonce, on sait jamais
   - "Sur un malentendu \xE7a peut passer"
   flowCost: 40
-  category: 0
+  category: 2
   effects:
   - {fileID: 11400000, guid: 82c2220e9b73d9f4eb838fce72bc2d51, type: 2}
   - {fileID: 11400000, guid: ca978e13cd1da6c4bb987f127767e56f, type: 2}

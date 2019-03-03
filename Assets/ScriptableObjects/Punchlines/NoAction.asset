@@ -16,7 +16,7 @@ MonoBehaviour:
   lines:
   - Gneu Gneu Gneu
   flowCost: 0
-  category: 0
+  category: 2
   effects:
   - {fileID: 11400000, guid: 6aef40f2ca34a554cb49df0c722929ec, type: 2}
   - {fileID: 11400000, guid: 0ea89196955e96d49b7f7bf324ed2b81, type: 2}

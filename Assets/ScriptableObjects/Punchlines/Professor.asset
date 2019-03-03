@@ -18,7 +18,7 @@ MonoBehaviour:
   - Balance moi en Alaska avec un lacet pour survivre...
   - "J'reviendrais te clasher sur cette sc\xE8ne !"
   flowCost: 45
-  category: 1
+  category: 2
   effects:
   - {fileID: 11400000, guid: 1715976b59f5892449b3d5036468c0c9, type: 2}
   - {fileID: 11400000, guid: 3eb0075254d71ab47a9453c036d5a449, type: 2}
