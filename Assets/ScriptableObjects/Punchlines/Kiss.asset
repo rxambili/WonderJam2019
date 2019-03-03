@@ -22,5 +22,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 09fd890d1848f6d429eeff417b76bbaa, type: 2}
   - {fileID: 11400000, guid: ca978e13cd1da6c4bb987f127767e56f, type: 2}
   hasCounter: 1
-  counterLines:
-  - "Ok faisons comme \xE7a"
+  counter: {fileID: 11400000, guid: 1ed5eed8c56c6d24eb9a4dba9be4be39, type: 2}

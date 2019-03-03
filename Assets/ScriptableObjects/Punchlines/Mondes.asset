@@ -21,6 +21,5 @@ MonoBehaviour:
   effects:
   - {fileID: 11400000, guid: 1715976b59f5892449b3d5036468c0c9, type: 2}
   - {fileID: 11400000, guid: 8261c5873d0841447a90c601e18346fd, type: 2}
-  hasCounter: 1
-  counterLines:
-  - "Peut-\xEAtre qui y'en \xE0 un o\xF9 t'es dr\xF4le"
+  hasCounter: 0
+  counter: {fileID: 0}
