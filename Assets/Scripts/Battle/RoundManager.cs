@@ -39,6 +39,8 @@ public class RoundManager : MonoBehaviour
     [SerializeField] private PhaseName currentPhase;
     [SerializeField] private int timer = 5;
 
+    private EndManager endManager;
+
     public delegate void OnTimer(int time);
 
     public static OnTimer onTimer;
@@ -54,6 +56,7 @@ public class RoundManager : MonoBehaviour
         currentPhase = PhaseName.SELECT_OPTION;
         player1 = GameObject.FindGameObjectWithTag("Player1").GetComponent<PlayerController>();
         player2 = GameObject.FindGameObjectWithTag("Player2").GetComponent<PlayerController>();
+        endManager = GetComponent<EndManager>();
         InitializePhase();
     }
 
@@ -93,8 +96,7 @@ public class RoundManager : MonoBehaviour
 
     private void Update()
     {
-        GetInputPlayer1();
-        GetInputPlayer2();
+       
         if (currentPhase == PhaseName.END_PHASE)
         {
 
@@ -117,11 +119,16 @@ public class RoundManager : MonoBehaviour
                
                 nextPhase();
             }
+        } else
+        {
+            GetInputPlayer1();
+            GetInputPlayer2();
         }
+
         if (timer < 0 && currentPhase != PhaseName.END_PHASE)
         {
             nextPhase();
-        }
+        } 
     }
 
     private void InitializePhase()
@@ -176,8 +183,23 @@ public class RoundManager : MonoBehaviour
                 break;
 
             case PhaseName.END_PHASE:
-                player1.EndRound();
-                player2.EndRound();
+                bool player1Dead = player1.EndRound();
+                bool player2Dead = player2.EndRound();
+                if (player1Dead && player2Dead)
+                {
+                    endManager.Draw();
+                    this.enabled = false;
+                }
+                if (player1Dead)
+                {
+                    endManager.WinPlayer2();
+                    this.enabled = false;
+                }
+                if (player2Dead)
+                {
+                    endManager.WinPlayer1();
+                    this.enabled = false;
+                }
                 break;
 
             default:

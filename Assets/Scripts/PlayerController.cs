@@ -100,6 +100,7 @@ public class PlayerController : MonoBehaviour
         playerPanel.SetButtonText(ButtonName.X, playerPunchlines[0].title, chooseTextColor(playerPunchlines[0]));
         playerPanel.SetButtonText(ButtonName.Y, playerPunchlines[1].title, chooseTextColor(playerPunchlines[1]));
         playerPanel.SetButtonText(ButtonName.B, playerPunchlines[2].title, chooseTextColor(playerPunchlines[2]));
+        playerPanel.SetButtonText(ButtonName.A, "Répartie", ButtonTextColor.WHITE);
         playerPanel.SetPunchLinePourcentage(ButtonName.X, playerPunchlines[0].flowCost);
         playerPanel.SetPunchLinePourcentage(ButtonName.Y, playerPunchlines[1].flowCost);
         playerPanel.SetPunchLinePourcentage(ButtonName.B, playerPunchlines[2].flowCost);
@@ -157,20 +158,10 @@ public class PlayerController : MonoBehaviour
         selectedButton = ButtonName.NONE;
     }
 
-    public void SayPunchline(Punchline line)
-    {
-        ResetSelectedButton();
-        dialogueManager.StartDialogue(line);
-    }
-
     public void SayPunchline()
     {
+        ResetSelectedButton();
         dialogueManager.StartDialogue(selectedLine);
-    }
-
-    public void SayPunchline(string[] line)
-    {
-        dialogueManager.StartDialogue(line);
     }
 
     public bool IsTalking()
