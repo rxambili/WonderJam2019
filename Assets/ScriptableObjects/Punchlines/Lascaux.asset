@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Lascaux
   m_EditorClassIdentifier: 
-  title: lascaux
+  title: Lascaux
   lines:
-  - "Ma vulgarit\xE9, c'est de l'audace..."
-  - je sors des grottes de Lascaux...
+  - "Ma vulgarit\xE9, c'est de l'audace, je sors des grottes de Lascaux..."
   - Je sais faire du feu et de beaux graphes !
   flowCost: 30
   category: 2

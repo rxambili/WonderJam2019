@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Tickets
   m_EditorClassIdentifier: 
-  title: tickets
+  title: Tickets
   lines:
   - "Je t'ai gard\xE9 deux tickets pour ma prochaine repr\xE9sentation..."
-  - "am\xE8ne un ami !..."
-  - '... Si t''en as un...'
+  - "am\xE8ne un ami, si t'en as un!"
   flowCost: 80
   category: 2
   effects:

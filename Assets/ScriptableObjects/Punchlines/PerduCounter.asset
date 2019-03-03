@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: PerduCounter
   m_EditorClassIdentifier: 
-  title: perdu
+  title: "Bonne r\xE9partie!"
   lines:
   - "Super, tu sais o\xF9 c'est ! Ca m'\xE9vitera de te guider."
   flowCost: 0

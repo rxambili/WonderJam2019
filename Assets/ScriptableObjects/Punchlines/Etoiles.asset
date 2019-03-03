@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Etoiles
   m_EditorClassIdentifier: 
-  title: "\xE9toiles"
+  title: Briller
   lines:
-  - "Comme la lune qui brille gr\xE2ce au soleil..."
+  - "Comme la lune qui rayonne gr\xE2ce au soleil..."
   - "C'est parce que je suis l\xE0 que tu peux briller !"
   flowCost: 35
   category: 2

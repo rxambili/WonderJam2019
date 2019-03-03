@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Grec
   m_EditorClassIdentifier: 
-  title: grec
+  title: Stature
   lines:
-  - Regarde moi ce corps de dieu grec !
+  - "Regarde moi ce corps, taill\xE9 tel un dieu grec !"
   flowCost: 40
   category: 1
   effects:

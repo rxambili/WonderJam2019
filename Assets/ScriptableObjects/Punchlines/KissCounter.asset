@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: KissCounter
   m_EditorClassIdentifier: 
-  title: "simplicit\xE9"
+  title: "Bonne r\xE9partie!"
   lines:
   - "OK, faisons comme \xE7a."
   flowCost: 0

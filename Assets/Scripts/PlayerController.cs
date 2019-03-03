@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public enum ActionMode
@@ -31,6 +32,8 @@ public class PlayerController : MonoBehaviour
 
     public ButtonName selectedButton { get; set; }
 
+   
+
     [HideInInspector] public Punchline[] playerPunchlines = new Punchline[3];
     [HideInInspector] public Punchline selectedLine;
 
@@ -45,6 +48,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         dialogueManager = GetComponent<DialogueManager>();
+        
         Initialize();
     }
 
@@ -190,6 +194,7 @@ public class PlayerController : MonoBehaviour
     public void SayPunchline()
     {
         ResetSelectedButton();
+        
         dialogueManager.StartDialogue(selectedLine);
     }
 

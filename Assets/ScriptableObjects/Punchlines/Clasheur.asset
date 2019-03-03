@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Clasheur
   m_EditorClassIdentifier: 
-  title: "clasheur n\xE9"
+  title: "Clasheur N\xE9"
   lines:
-  - Les gens disent...
-  - "que dieu m'a envoy\xE9 Wojtek..."
+  - "Les gens disent que dieu m'a envoy\xE9 Wojtek..."
   - "pour que je lui apprenne \xE0 clasher !"
   flowCost: 80
   category: 2

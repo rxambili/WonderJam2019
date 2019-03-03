@@ -319,7 +319,7 @@ public class RoundManager : MonoBehaviour
             case ActionMode.PUBLIC:
                 player1.selectedLine = Instantiate(publicPunchline);
                 Effect publicEffect = new Effect();
-                publicEffect.hype = (- audienceHype - (maxAudienceHype - minAudienceHype + 1) / 2) / 2;
+                publicEffect.hype = - (audienceHype - (maxAudienceHype - minAudienceHype + 1) / 2) / 2;
                 publicEffect.pressureBoost = publicEffect.hype;
                 player1.selectedLine.effects = new List<Effect>();
                 player1.selectedLine.effects.Add(publicEffect);

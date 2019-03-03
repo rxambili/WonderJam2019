@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Dictionnaire
   m_EditorClassIdentifier: 
-  title: dictionnaire
+  title: Dictionnaire
   lines:
-  - Dans le dictionnaire...
-  - "ils ont pas trouv\xE9 le mot pour te d\xE9crire..."
+  - "Dans le dictionnaire ils ont pas trouv\xE9 le mot pour te d\xE9crire..."
   - "et y r\xE9fl\xE9chir les feraient bien trop souffrir !"
   flowCost: 20
   category: 1

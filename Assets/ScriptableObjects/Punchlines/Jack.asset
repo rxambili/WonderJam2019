@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Jack
   lines:
-  - Ha, c'est de la pickette Jack...
+  - Haha, c'est de la pickette Jack...
   - tu sais pas jouer, t'es MAUVAIS !
   flowCost: 20
   category: 0
