@@ -9,6 +9,8 @@ public class PlayerReadyText : MonoBehaviour
     
     private TextMeshProUGUI playerSelection;
 
+    public bool ready { get; set; }
+
     private void Awake()
     {
         playerSelection = GetComponent<TextMeshProUGUI>();
@@ -17,6 +19,7 @@ public class PlayerReadyText : MonoBehaviour
     public void setReady()
     {
         playerSelection.text = "READY";
+        ready = true;
         onReady.raise();
     }
 }

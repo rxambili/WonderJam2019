@@ -27,11 +27,15 @@ public class RoundManager : MonoBehaviour
     [SerializeField] private Punchline reposPunchline;
     [SerializeField] private Punchline failedCounter;
 
+    
+
     [Header("Debug")] [SerializeField] private int round = 1;
 
 
     [SerializeField] private PhaseName currentPhase;
     [SerializeField] private int timer = 5;
+
+    private EndManager endManager;
 
     public delegate void OnTimer(int time);
 
@@ -46,8 +50,10 @@ public class RoundManager : MonoBehaviour
     private void Start()
     {
         currentPhase = PhaseName.SELECT_OPTION;
+        round = 0;
         player1 = GameObject.FindGameObjectWithTag("Player1").GetComponent<PlayerController>();
         player2 = GameObject.FindGameObjectWithTag("Player2").GetComponent<PlayerController>();
+        endManager = GetComponent<EndManager>();
         InitializePhase();
     }
 
@@ -171,8 +177,26 @@ public class RoundManager : MonoBehaviour
                 break;
 
             case PhaseName.END_PHASE:
-                player1.EndRound();
-                player2.EndRound();
+                bool player1Dead = player1.EndRound();
+                bool player2Dead = player2.EndRound();
+                if (player1Dead && player2Dead)
+                {
+                    endManager.Draw();
+                    gameObject.SetActive(false);
+                    break;
+                }
+                if (player1Dead)
+                {
+                    endManager.WinPlayer2();
+                    gameObject.SetActive(false);
+                    break;
+                }
+                if (player2Dead)
+                {
+                    endManager.WinPlayer1();
+                    gameObject.SetActive(false);
+                    break;
+                }
                 break;
 
             default:
@@ -374,4 +398,5 @@ public class RoundManager : MonoBehaviour
                 break;
         }
     }
+
 }
