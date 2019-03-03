@@ -26,8 +26,12 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector]
     public Punchline[] playerPunchlines = new Punchline[3];
+    [HideInInspector]
+    public Punchline selectedLine;
+
     private DialogueManager dialogueManager;
     private ActionMode currentActionMode;
+    
 
     void Start()
     {
@@ -95,6 +99,20 @@ public class PlayerController : MonoBehaviour
         playerPanel.SetButtonText(ButtonName.A, "Répartie");
         currentActionMode = ActionMode.CLASH;
 
+        if (playerPunchlines[0].flowCost > flow)
+        {
+            playerPanel.DisableButton(ButtonName.X);
+        }
+        if (playerPunchlines[1].flowCost > flow)
+        {
+            playerPanel.DisableButton(ButtonName.Y);
+        }
+        if (playerPunchlines[2].flowCost > flow)
+        {
+            playerPanel.DisableButton(ButtonName.B);
+        }
+
+
     }
 
     public void RecupFlowMode()
@@ -135,6 +153,16 @@ public class PlayerController : MonoBehaviour
         dialogueManager.StartDialogue(line);
     }
 
+    public void SayPunchline()
+    {
+        dialogueManager.StartDialogue(selectedLine);
+    }
+
+    public void SayPunchline(string[] line)
+    {
+        dialogueManager.StartDialogue(line);
+    }
+
     public bool IsTalking()
     {
         return dialogueManager.isTalking;
@@ -151,5 +179,10 @@ public class PlayerController : MonoBehaviour
     {
         dialogueManager.hasTalked = false;
         dialogueManager.isTalking = false;
+    }
+
+    public bool IsButtonDisabled(ButtonName button)
+    {
+        return playerPanel.IsButtonDisabled(button);
     }
 }

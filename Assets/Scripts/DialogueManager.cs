@@ -35,6 +35,22 @@ public class DialogueManager : MonoBehaviour
         DisplayNextSentence();
     }
 
+    public void StartDialogue(string[] lines)
+    {
+        // animator.SetBool("IsOpen", true);
+        canvas.SetActive(true);
+        isTalking = true;
+        hasTalked = false;
+        sentences.Clear();
+
+        foreach (string line in lines)
+        {
+            sentences.Enqueue(line);
+        }
+
+        DisplayNextSentence();
+    }
+
     public void DisplayNextSentence()
     {
         if (sentences.Count == 0)
