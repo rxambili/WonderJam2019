@@ -17,7 +17,7 @@ MonoBehaviour:
   - "Parait qu'il existe une infinit\xE9 d'univers"
   - "Mais y'en a pas un o\xF9 t'es meilleur que moi"
   flowCost: 45
-  category: 0
+  category: 2
   effects:
   - {fileID: 11400000, guid: 1715976b59f5892449b3d5036468c0c9, type: 2}
   - {fileID: 11400000, guid: 8261c5873d0841447a90c601e18346fd, type: 2}

@@ -19,7 +19,7 @@ MonoBehaviour:
   - "Arr\xEAte de brasser de l'air"
   - Il faudrait qtu cogite
   flowCost: 15
-  category: 0
+  category: 2
   effects:
   - {fileID: 11400000, guid: 1715976b59f5892449b3d5036468c0c9, type: 2}
   - {fileID: 11400000, guid: ca978e13cd1da6c4bb987f127767e56f, type: 2}
