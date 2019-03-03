@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Public
   lines:
-  - "Est-ce que vous \xEAtes chaud!"
+  - "Est-ce que vous \xEAtes CHAUDS ?!"
   flowCost: 0
   category: 0
   effects: []
   hasCounter: 0
-  counterLines: []
+  counter: {fileID: 0}

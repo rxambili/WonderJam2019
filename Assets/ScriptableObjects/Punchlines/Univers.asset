@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Univers
   m_EditorClassIdentifier: 
-  title: Univers
+  title: univers
   lines:
-  - Deux choses sont infinies
-  - "L'univers et ta b\xEAtise"
-  - En ce qui concerce l'univers
-  - Einstein n'en avait pas la certitude
+  - Deux choses sont infinies...
+  - "... l'univers et ta b\xEAtise..."
+  - '... En ce qui concerne l''univers...'
+  - Einstein n'en avait pas la certitude !
   flowCost: 20
   category: 0
   effects:
   - {fileID: 11400000, guid: 82c2220e9b73d9f4eb838fce72bc2d51, type: 2}
   hasCounter: 0
-  counterLines: []
+  counter: {fileID: 0}

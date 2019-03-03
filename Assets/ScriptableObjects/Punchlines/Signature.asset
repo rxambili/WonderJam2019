@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Signature
   m_EditorClassIdentifier: 
-  title: Signature
+  title: signature
   lines:
-  - Ma vie est comme ma signature
-  - Propre et sans ratures
-  - 'Le chemin q''j''ai fais a pieds '
-  - "Tu l'as m\xEAme pas fais en voiture"
+  - Ma vie est comme ma signature...
+  - propre et sans ratures...
+  - "Le chemin que j'ai fait \xE0 pieds..."
+  - "tu l'as m\xEAme pas fait en voiture !"
   flowCost: 50
   category: 1
   effects:

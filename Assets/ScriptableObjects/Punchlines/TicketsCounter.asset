@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: TicketsCounter
   m_EditorClassIdentifier: 
-  title: Tickets
+  title: tickets
   lines:
-  - "Jpourrais pas venir \xE0 la prochaine, mais la suivante..."
-  - Si il y en a une!
+  - "Je pourrai pas venir \xE0 la prochaine, mais la suivante..."
+  - S'il y en a une!
   flowCost: 0
   category: 0
   effects:

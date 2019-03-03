@@ -23,7 +23,6 @@ public class TimerText : MonoBehaviour
 
     private void UpdateTimer(int time)
     {
-        timer.text = time.ToString();
+        timer.text = time != 0 ? time.ToString() : "";
     }
-
 }

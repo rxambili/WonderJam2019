@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: "Mauvaise r\xE9partie"
   m_EditorClassIdentifier: 
-  title: "Mauvaise R\xE9partie"
+  title: "mauvaise r\xE9partie"
   lines:
-  - Miroir..Miroir
+  - Miroir...Miroir
   flowCost: 0
   category: 0
   effects:

@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Enfer
   m_EditorClassIdentifier: 
-  title: Enfer
+  title: enfer
   lines:
-  - J'pourrais bien te faire mourir de honte
-  - "Mais m\xEAme l'enfer voudrais pas d'toi"
+  - Je pourrais bien te faire mourir de honte...
+  - "mais m\xEAme L'ENFER voudrais pas de toi !"
   flowCost: 20
   category: 1
   effects:
   - {fileID: 11400000, guid: 2012a02d0c05a6e40b480bddb8be64cc, type: 2}
   hasCounter: 0
-  counterLines: []
+  counter: {fileID: 0}

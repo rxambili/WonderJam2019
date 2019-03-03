@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Pinocchio
   m_EditorClassIdentifier: 
-  title: Nez rouge...Pinocchio
+  title: pinocchio
   lines:
-  - "Ta gueule de bois ferait passer Pinocchio pour un vrai petit gar\xE7on"
+  - "Ta gueule de bois ferait passer Pinocchio pour un vrai petit gar\xE7on !"
   flowCost: 30
   category: 0
   effects:
   - {fileID: 11400000, guid: 8870da4604c64584eab6fac8e9e821bc, type: 2}
   hasCounter: 0
-  counterLines: []
+  counter: {fileID: 0}

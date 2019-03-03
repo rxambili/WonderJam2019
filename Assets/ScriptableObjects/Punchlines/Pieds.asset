@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Pieds
   m_EditorClassIdentifier: 
-  title: Pieds...Niveau
+  title: pieds...niveau
   lines:
-  - "Tu m\xE9rite pas de poser les pieds sur cette sc\xE8ne"
-  - T'as pas le niveau
+  - "Tu m\xE9rites pas de poser les pieds sur cette sc\xE8ne..."
+  - t'as pas le niveau !
   flowCost: 50
   category: 2
   effects:

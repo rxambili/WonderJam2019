@@ -6,7 +6,6 @@ using Random = UnityEngine.Random;
 
 public class RoundManager : MonoBehaviour
 {
-    
     public enum PhaseName
     {
         SELECT_OPTION, // Options : insultes, repos, public, ???
@@ -14,20 +13,23 @@ public class RoundManager : MonoBehaviour
         END_PHASE // Calcul des dégâts
     }
 
-     
+
     [Header("Timer")] [SerializeField] private int optionTime;
     [SerializeField] private int actionTime;
     [SerializeField] private int endPhaseTime;
 
-    [Header("Punchline")]
-    [SerializeField] private Punchline[] punchlines;
+    [Header("Game Events")] public GameEvent onStartGame;
+    public GameEvent onEndGame;
+
+    [Header("Punchline")] [SerializeField] private Punchline[] punchlines;
     [SerializeField] private Punchline noActionPunchline;
     [SerializeField] private Punchline publicPunchline;
     [SerializeField] private Punchline reposPunchline;
     [SerializeField] private Punchline failedCounter;
 
 
-    [Header("Debug")] [SerializeField] private int round = 1;
+    [Header("Debug")] 
+    [SerializeField] private int round = 1;
 
 
     [SerializeField] private PhaseName currentPhase;
@@ -43,19 +45,32 @@ public class RoundManager : MonoBehaviour
 
     public static OnTimer onTimer;
 
+    public delegate void OnNextPhase(PlayerController player1, PlayerController player2);
+
+    public static OnNextPhase onNextPhase;
+
     private PlayerController player1;
     private PlayerController player2;
     private PlayerController firstTalker;
     private PlayerController secondTalker;
-    
+
+    private bool gameFinished;
 
     private void Start()
     {
-        currentPhase = PhaseName.SELECT_OPTION;
         player1 = GameObject.FindGameObjectWithTag("Player1").GetComponent<PlayerController>();
         player2 = GameObject.FindGameObjectWithTag("Player2").GetComponent<PlayerController>();
         endManager = GetComponent<EndManager>();
+
+        Initialize();
+    }
+
+    public void Initialize()
+    {
+        currentPhase = PhaseName.SELECT_OPTION;
+        onStartGame.raise();
         InitializePhase();
+        gameFinished = false;
     }
 
     public IEnumerator StartCountdown(int countdownValue)
@@ -71,7 +86,8 @@ public class RoundManager : MonoBehaviour
 
     public void nextPhase()
     {
-        EndPhase();
+        if (CheckForFinish()) return;
+
         if (currentPhase == PhaseName.END_PHASE)
         {
             nextRound();
@@ -80,11 +96,12 @@ public class RoundManager : MonoBehaviour
         {
             currentPhase++;
         }
-        InitializePhase();
 
+        onNextPhase(player1, player2);
+
+        InitializePhase();
     }
 
-   
 
     private void nextRound()
     {
@@ -92,12 +109,13 @@ public class RoundManager : MonoBehaviour
         round++;
     }
 
+    private bool temp1 = true, temp2 = true;
+
     private void Update()
     {
-       
+        if (gameFinished) return;
         if (currentPhase == PhaseName.END_PHASE)
         {
-
             if (!firstTalker.IsTalking() && !firstTalker.HasTalked())
             {
                 firstTalker.SayPunchline();
@@ -105,19 +123,40 @@ public class RoundManager : MonoBehaviour
 
             if (!secondTalker.IsTalking() && !secondTalker.HasTalked() && firstTalker.HasTalked())
             {
-                secondTalker.SayPunchline();
+                if (temp1)
+                {
+                    ApplyEffects(firstTalker.selectedLine, firstTalker, secondTalker);
+                    temp1 = false;
+                }
+
+                if (!secondTalker.isDoingSomething)
+                {
+                    secondTalker.SayPunchline();
+                }
             }
 
             if (firstTalker.HasTalked() && secondTalker.HasTalked())
             {
-                ApplyEffects(player1.selectedLine, player1, player2);
-                ApplyEffects(player2.selectedLine, player2, player1);
-                player1.ResetDialogues();
-                player2.ResetDialogues();
-               
-                nextPhase();
+                if (temp2)
+                {
+                    ApplyEffects(secondTalker.selectedLine, secondTalker, firstTalker);
+                    temp2 = false;
+                }
+
+                if (!firstTalker.isDoingSomething)
+                {
+                    player1.ResetDialogues();
+                    player2.ResetDialogues();
+
+                    // TODO: gestion animations
+                    //PlayerController mostAffectedPlayer = (player1.selectedLine.effects[0].pressureDamage > player2.selectedLine.effects[0])
+                    temp1 = true;
+                    temp2 = true;
+                    nextPhase();
+                }
             }
-        } else
+        }
+        else
         {
             GetInputPlayer1();
             GetInputPlayer2();
@@ -126,7 +165,7 @@ public class RoundManager : MonoBehaviour
         if (timer < 0 && currentPhase != PhaseName.END_PHASE)
         {
             nextPhase();
-        } 
+        }
     }
 
     private void InitializePhase()
@@ -149,10 +188,12 @@ public class RoundManager : MonoBehaviour
                 if (player1.GetActionMode() != ActionMode.CLASH && player2.GetActionMode() != ActionMode.CLASH)
                 {
                     nextPhase();
-                } else
+                }
+                else
                 {
                     StartCoroutine(StartCountdown(actionTime));
                 }
+
                 player1.ResetSelectedButton();
                 player2.ResetSelectedButton();
                 break;
@@ -162,7 +203,7 @@ public class RoundManager : MonoBehaviour
                 player1.EndingPhase();
                 player2.EndingPhase();
                 // StartCoroutine(StartCountdown(endPhaseTime));
-                
+
                 break;
 
             default:
@@ -170,40 +211,20 @@ public class RoundManager : MonoBehaviour
         }
     }
 
-    private void EndPhase()
+    private bool CheckForFinish()
     {
-        switch (currentPhase)
+        if (currentPhase == PhaseName.END_PHASE)
         {
-            case PhaseName.SELECT_OPTION:
-                break;
 
-            case PhaseName.SELECT_ACTION:
-                break;
-
-            case PhaseName.END_PHASE:
-                bool player1Dead = player1.EndRound();
-                bool player2Dead = player2.EndRound();
-                if (player1Dead && player2Dead)
-                {
-                    endManager.Draw();
-                    this.enabled = false;
-                }
-                if (player1Dead)
-                {
-                    endManager.WinPlayer2();
-                    this.enabled = false;
-                }
-                if (player2Dead)
-                {
-                    endManager.WinPlayer1();
-                    this.enabled = false;
-                }
-                break;
-
-            default:
-                throw new ArgumentOutOfRangeException("phase", currentPhase, null);
+            bool player1Dead = player1.EndRound();
+            bool player2Dead = player2.EndRound();
+            if (player1Dead || player2Dead)
+            {
+                finishGame(player1Dead, player2Dead);
+                return true;
+            }
         }
-        
+        return false;
     }
 
     private void GetInputPlayer1()
@@ -212,14 +233,17 @@ public class RoundManager : MonoBehaviour
         {
             player1.selectedButton = ButtonName.A;
         }
+
         if (Input.GetButtonDown("Player1 Button B") && !player1.IsButtonDisabled(ButtonName.B))
         {
             player1.selectedButton = ButtonName.B;
         }
+
         if (Input.GetButtonDown("Player1 Button X") && !player1.IsButtonDisabled(ButtonName.X))
         {
             player1.selectedButton = ButtonName.X;
         }
+
         if (Input.GetButtonDown("Player1 Button Y") && !player1.IsButtonDisabled(ButtonName.Y))
         {
             player1.selectedButton = ButtonName.Y;
@@ -232,14 +256,17 @@ public class RoundManager : MonoBehaviour
         {
             player2.selectedButton = ButtonName.A;
         }
+
         if (Input.GetButtonDown("Player2 Button B") && !player2.IsButtonDisabled(ButtonName.B))
         {
             player2.selectedButton = ButtonName.B;
         }
+
         if (Input.GetButtonDown("Player2 Button X") && !player2.IsButtonDisabled(ButtonName.X))
         {
             player2.selectedButton = ButtonName.X;
         }
+
         if (Input.GetButtonDown("Player2 Button Y") && !player2.IsButtonDisabled(ButtonName.Y))
         {
             player2.selectedButton = ButtonName.Y;
@@ -267,7 +294,6 @@ public class RoundManager : MonoBehaviour
 
     private void ChooseLines()
     {
-        
         switch (player1.GetActionMode())
         {
             case ActionMode.CLASH:
@@ -310,8 +336,6 @@ public class RoundManager : MonoBehaviour
             case ActionMode.NOACTION:
                 player2.selectedLine = noActionPunchline;
                 break;
-            default:
-                break;
         }
 
         float rand = Random.Range(0, 1);
@@ -349,8 +373,6 @@ public class RoundManager : MonoBehaviour
                 player1.selectedLine.effects = new List<Effect>();
             }
         }
-
-
     }
 
     private void SelectAvailablePunchlines()
@@ -358,7 +380,7 @@ public class RoundManager : MonoBehaviour
         List<Punchline> listPunchlines = new List<Punchline>(punchlines);
 
         // joueur 1
-        for (int i=0; i<3; i++)
+        for (int i = 0; i < 3; i++)
         {
             int chosenIndex = Random.Range(0, listPunchlines.Count);
             player1.playerPunchlines[i] = listPunchlines[chosenIndex];
@@ -377,8 +399,12 @@ public class RoundManager : MonoBehaviour
     private void ApplyEffects(Punchline line, PlayerController source, PlayerController target)
     {
         source.AddFlow(-line.flowCost);
+        int totalPressure = 0;
+
         foreach (Effect e in line.effects)
         {
+            totalPressure += e.pressureDamage;
+
             target.AddPressure(e.pressureDamage);
             target.AddFlow(-e.flowDamage);
             source.AddPressure(e.pressureBoost);
@@ -392,6 +418,12 @@ public class RoundManager : MonoBehaviour
             {
                 AddHype(-e.hype);
             }
+        }
+
+        Debug.Log("pressure applied : " + totalPressure);
+        if (totalPressure > 0)
+        {
+            target.takeHit();
         }
     }
 
@@ -418,16 +450,36 @@ public class RoundManager : MonoBehaviour
         }
     }
 
-    public void AddHype(int amount)
-    {
+    public void AddHype(int amount) {
         audienceHype += amount;
-        if (audienceHype > maxAudienceHype)
-        {
+        if (audienceHype > maxAudienceHype) {
             audienceHype = maxAudienceHype;
         }
-        if (audienceHype < minAudienceHype)
-        {
+        if (audienceHype < minAudienceHype) {
             audienceHype = minAudienceHype;
         }
+    }
+
+    private void finishGame(bool player1Dead, bool player2Dead)
+    {
+        Debug.Log("FIIINIIIISHHé");
+        player1.finishGame();
+        player2.finishGame();
+        if (player1Dead && player2Dead)
+        {
+            endManager.Draw();
+        }
+
+        if (player1Dead)
+        {
+            endManager.WinPlayer2();
+        }
+
+        if (player2Dead)
+        {
+            endManager.WinPlayer1();
+        }
+
+        gameFinished = true;
     }
 }

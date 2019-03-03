@@ -1,5 +1,7 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using System;
+using System.Collections;
+using UnityEngine;
+
 public enum ActionMode
 {
     CLASH,
@@ -7,12 +9,15 @@ public enum ActionMode
     PUBLIC,
     NOACTION
 }
+
+[RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour
 {
-    [Header("UI")] 
-    public PlayerCanvasManager playerPanel;
-    
+    [Header("UI")] public PlayerCanvasManager playerPanel;
 
+    private Animator animator;
+
+    public bool isDoingSomething = false;
 
     public static int maxPressure = 100;
     public static int minPressure = 0;
@@ -26,24 +31,43 @@ public class PlayerController : MonoBehaviour
 
     public ButtonName selectedButton { get; set; }
 
-    [HideInInspector]
-    public Punchline[] playerPunchlines = new Punchline[3];
-    [HideInInspector]
-    public Punchline selectedLine;
+    [HideInInspector] public Punchline[] playerPunchlines = new Punchline[3];
+    [HideInInspector] public Punchline selectedLine;
 
     private DialogueManager dialogueManager;
     private ActionMode currentActionMode;
-    
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     void Start()
     {
         dialogueManager = GetComponent<DialogueManager>();
+        Initialize();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Y))
+        {
+            pressure = 100;
+        }
+    }
+
+    public void Initialize()
+    {
+        
         pressure = minPressure;
         flow = maxFlow;
         selectedButton = ButtonName.NONE;
 
-    }
+        playerPanel.enabled = true;
 
+        selectedLine = null;
+        isDoingSomething = false;
+    }
 
     public void AddPressure(int amount)
     {
@@ -52,7 +76,8 @@ public class PlayerController : MonoBehaviour
         if (pressure > maxPressure)
         {
             pressure = maxPressure;
-        } else
+        }
+        else
         {
             if (pressure < minPressure)
             {
@@ -88,14 +113,18 @@ public class PlayerController : MonoBehaviour
 
     public void OptionMode()
     {
+        animator.SetBool("Clashing", false);
+
         playerPanel.HideFlowPourcentageText();
         playerPanel.HideCounterImages();
         playerPanel.DisplayButtons(true);
-        playerPanel.OptionMode();       
+        playerPanel.OptionMode();
     }
 
     public void ClashMode()
     {
+        animator.SetBool("Clashing", true);
+
         playerPanel.DisplayButtons(true);
         playerPanel.SetButtonText(ButtonName.X, playerPunchlines[0].title, chooseTextColor(playerPunchlines[0]));
         playerPanel.SetButtonText(ButtonName.Y, playerPunchlines[1].title, chooseTextColor(playerPunchlines[1]));
@@ -112,16 +141,16 @@ public class PlayerController : MonoBehaviour
         {
             playerPanel.DisableButton(ButtonName.X);
         }
+
         if (playerPunchlines[1].flowCost > flow)
         {
             playerPanel.DisableButton(ButtonName.Y);
         }
+
         if (playerPunchlines[2].flowCost > flow)
         {
             playerPanel.DisableButton(ButtonName.B);
         }
-
-
     }
 
     public void RecupFlowMode()
@@ -169,7 +198,6 @@ public class PlayerController : MonoBehaviour
         return dialogueManager.isTalking;
     }
 
-    
 
     public bool HasTalked()
     {
@@ -184,7 +212,7 @@ public class PlayerController : MonoBehaviour
 
     public ButtonTextColor chooseTextColor(Punchline punchline)
     {
-        switch(punchline.category)
+        switch (punchline.category)
         {
             case PunchlineCategory.CLASH:
                 return ButtonTextColor.RED;
@@ -204,11 +232,13 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Affichage counter X");
             playerPanel.ShowCounterImage(ButtonName.X);
         }
+
         if (playerPunchlines[1].hasCounter)
         {
             Debug.Log("Affichage counter Y");
             playerPanel.ShowCounterImage(ButtonName.Y);
         }
+
         if (playerPunchlines[2].hasCounter)
         {
             Debug.Log("Affichage counter B");
@@ -220,4 +250,38 @@ public class PlayerController : MonoBehaviour
     {
         return playerPanel.IsButtonDisabled(button);
     }
+
+    public void takeHit()
+    {
+        isDoingSomething = true;
+        
+        StartCoroutine(playAnimation("Hit", 1.5f));
+        animator.SetInteger("Pressure", pressure);
+        
+
+        // TODO: sfx
+    }
+
+    private IEnumerator playAnimation(string animParam, float time)
+    {
+        float currentTime = 0;
+        animator.SetBool(animParam, true);
+        
+        while (currentTime < time)
+        {
+            currentTime += Time.deltaTime;
+            yield return null;
+        }
+        
+        animator.SetBool(animParam, false);
+        isDoingSomething = false;
+    }
+
+
+    public void finishGame()
+    {
+        Debug.Log("hey");
+        playerPanel.DisplayButtons(false);
+    }
+
 }
