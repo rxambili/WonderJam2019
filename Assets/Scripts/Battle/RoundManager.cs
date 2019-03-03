@@ -188,17 +188,17 @@ public class RoundManager : MonoBehaviour
                 if (player1Dead && player2Dead)
                 {
                     endManager.Draw();
-                    enabled = false;
+                    this.enabled = false;
                 }
                 if (player1Dead)
                 {
                     endManager.WinPlayer2();
-                    enabled = false;
+                    this.enabled = false;
                 }
                 if (player2Dead)
                 {
                     endManager.WinPlayer1();
-                    enabled = false;
+                    this.enabled = false;
                 }
                 break;
 
