@@ -4,8 +4,8 @@ public class StartGame : MonoBehaviour
 {
     [Header("Game Events")] [SerializeField] [Tooltip("Triggered when both players are ready to start a game")]
     private GameEvent onPreStartGameP1;
-
     [SerializeField] private GameEvent onPreStartGameP2;
+    [SerializeField] private GameEvent onPlayersReady;
 
     private RoundManager roundManager;
 
@@ -46,11 +46,10 @@ public class StartGame : MonoBehaviour
         if (!p1Ready || !p2Ready || playersAreReady) return;
         
         playersAreReady = true;
-        Debug.Log("launch the game");
-        // startRounds();
+        onPlayersReady.raise();
     }
 
-    private void startRounds()
+    public void startRounds()
     {
         player1Canvas.SetActive(true);
         player2Canvas.SetActive(true);

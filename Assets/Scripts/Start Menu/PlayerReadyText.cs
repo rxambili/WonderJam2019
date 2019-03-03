@@ -18,8 +18,6 @@ public class PlayerReadyText : MonoBehaviour
 
     public void setReady()
     {
-        // playerSelection.text = "READY";
-        // ready = true;
         onReady.raise();
         gameObject.SetActive(false);
     }
