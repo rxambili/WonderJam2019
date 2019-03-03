@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Professor
   m_EditorClassIdentifier: 
-  title: The professor
+  title: Le prof
   lines:
-  - "T'as pas affaire \xE0 un \xE9l\xE8ve. Appelle moi professeur!"
-  - Balance moi en Alaska avec un lacet pour survivre...
-  - "J'reviendrais te clasher sur cette sc\xE8ne !"
+  - "T'as pas affaire \xE0 un \xE9l\xE8ve. Appelle-moi professeur !..."
+  - balance-moi en Alaska avec un lacet pour survivre...
+  - "je reviendrai te clasher sur cette sc\xE8ne !"
   flowCost: 45
   category: 2
   effects:

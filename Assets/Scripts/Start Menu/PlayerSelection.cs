@@ -7,6 +7,7 @@ public class PlayerSelection : MonoBehaviour
     [SerializeField] private GameEvent onPlayer2Selected;
 
     [SerializeField] private GameObject tutoPanel;
+    [SerializeField] private GameObject tutoButton;
     private bool isDoingTuto;
 
     private bool player1Ready;
@@ -67,12 +68,14 @@ public class PlayerSelection : MonoBehaviour
     private void StartTuto()
     {
         isDoingTuto = true;
-        tutoPanel.SetActive(true);        
+        tutoPanel.SetActive(true);
+        tutoButton.SetActive(false);
     }
     private void StopTuto()
     {
         tutoPanel.SetActive(false);
         isDoingTuto = false;
+        tutoButton.SetActive(true);
     }
 
     public void setP1Ready()

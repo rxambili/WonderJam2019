@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: "Royaut\xE9"
   m_EditorClassIdentifier: 
-  title: "Royaut\xE9"
+  title: "royaut\xE9"
   lines:
-  - "Sur cette ar\xE8ne"
-  - Tu es le bouffon
-  - Je suis le roi
+  - "Sur cette ar\xE8ne..."
+  - tu es le bouffon...
+  - Et je suis le ROI !
   flowCost: 60
   category: 2
   effects:

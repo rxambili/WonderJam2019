@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: PitoyableCounter
   m_EditorClassIdentifier: 
-  title: Pitoyable
+  title: pitoyable
   lines:
-  - Au moins on parle de moi!
+  - Au moins on parle de moi !
   flowCost: 0
   category: 0
   effects:

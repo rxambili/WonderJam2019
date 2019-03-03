@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Jack
   lines:
-  - Ha, c'est de la pickette Jack
-  - Tu sais pas jouer t'es MAUVAIIIIIS
+  - Ha, c'est de la pickette Jack...
+  - tu sais pas jouer, t'es MAUVAIS !
   flowCost: 20
   category: 0
   effects:
   - {fileID: 11400000, guid: 8870da4604c64584eab6fac8e9e821bc, type: 2}
   hasCounter: 0
-  counterLines: []
+  counter: {fileID: 0}

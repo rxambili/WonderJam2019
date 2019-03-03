@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Perdu
   m_EditorClassIdentifier: 
-  title: Perdu
+  title: perdu
   lines:
-  - Je crois qu'tu t'es perdu
-  - Je peux te montrer la sortie
+  - Eh, je crois que tu t'es perdu...
+  - je peux te montrer la sortie !
   flowCost: 50
   category: 2
   effects:

@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Etoiles
   m_EditorClassIdentifier: 
-  title: Etoiles
+  title: "\xE9toiles"
   lines:
-  - "Comme la lune qui brille gr\xE2ce au soleil"
-  - "C'parceque chui l\xE0 q'tu peux briller"
+  - "Comme la lune qui brille gr\xE2ce au soleil..."
+  - "C'est parce que je suis l\xE0 que tu peux briller !"
   flowCost: 35
   category: 2
   effects:
   - {fileID: 11400000, guid: 1715976b59f5892449b3d5036468c0c9, type: 2}
   - {fileID: 11400000, guid: c05977f7d2bda594698a0b856c359bf5, type: 2}
   hasCounter: 0
-  counterLines: []
+  counter: {fileID: 0}

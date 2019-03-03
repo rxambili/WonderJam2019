@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Singe
   m_EditorClassIdentifier: 
-  title: Singe...Arbre
+  title: singe...arbre
   lines:
-  - L'homme descend du singe
-  - Le singe de l'arbre
-  - "Et vu ta t\xEAte t'a du rat\xE9 une branche"
+  - L'homme descend du singe...
+  - le singe de l'arbre...
+  - "et vu ta t\xEAte tu as du rater une branche !"
   flowCost: 10
   category: 0
   effects:
   - {fileID: 11400000, guid: 850f11397f5f8884c9dac6e432a1c620, type: 2}
   hasCounter: 0
-  counterLines: []
+  counter: {fileID: 0}

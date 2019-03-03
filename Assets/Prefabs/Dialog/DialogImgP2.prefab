@@ -70,7 +70,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 0.5
+  m_padding: 0
   m_canvasRenderer: {fileID: 5590212243064993760}
   m_TextComponent: {fileID: 3442680881649580883}
   m_materialReferenceIndex: 1
@@ -256,8 +256,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: "Ta gueule de bois ferait passer Pinocchio pour un vrai petit gar\xE7on"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cb419549e34a3744e9c3762cc9755730, type: 2}
-  m_sharedMaterial: {fileID: 21653095910554720, guid: cb419549e34a3744e9c3762cc9755730,
+  m_fontAsset: {fileID: 11400000, guid: b52c9d64b90912b428b1880753c8a755, type: 2}
+  m_sharedMaterial: {fileID: 21280369599410184, guid: b52c9d64b90912b428b1880753c8a755,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -283,12 +283,12 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 48
+  m_fontSize: 64
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 30
-  m_fontSizeMax: 48
+  m_fontSizeMax: 64
   m_fontStyle: 0
   m_textAlignment: 544
   m_isAlignmentEnumConverted: 1
@@ -321,7 +321,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 9.966492, y: 12.458103, z: 9.966443, w: -34.882652}
+  m_margin: {x: 9.966492, y: -11.684902, z: 9.966443, w: -42.326088}
   m_textInfo:
     textComponent: {fileID: 3442680881649580883}
     characterCount: 67
@@ -331,7 +331,7 @@ MonoBehaviour:
     linkCount: 0
     lineCount: 2
     pageCount: 1
-    materialCount: 2
+    materialCount: 1
   m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0

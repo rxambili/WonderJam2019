@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: PiedsCounter
   m_EditorClassIdentifier: 
-  title: Pieds...Niveau
+  title: pieds...niveau
   lines:
-  - "Je met mes pieds o\xF9 je veux.."
-  - Et c'est souvent dans la gueule
+  - "Je mets mes pieds o\xF9 je veux..."
+  - Et c'est souvent dans la face !
   flowCost: 0
   category: 0
   effects:
