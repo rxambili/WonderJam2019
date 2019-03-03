@@ -155,7 +155,6 @@ public class PlayerCanvasManager : MonoBehaviour
     }
     public void DisplayButtons(bool display)
     {
-        Debug.Log("active le truc ? " + display);
         if (display)
         {
             EnableButtons();

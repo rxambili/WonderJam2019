@@ -436,7 +436,6 @@ public class RoundManager : MonoBehaviour
             }
         }
 
-        Debug.Log("pressure applied : " + totalPressure);
         if (totalPressure > 0)
         {
             target.takeHit();
@@ -478,7 +477,6 @@ public class RoundManager : MonoBehaviour
 
     private void finishGame(bool player1Dead, bool player2Dead)
     {
-        Debug.Log("FIIINIIIISHHé");
         player1.finishGame();
         player2.finishGame();
         if (player1Dead && player2Dead)
@@ -497,5 +495,7 @@ public class RoundManager : MonoBehaviour
         }
 
         gameFinished = true;
+
+        onEndGame.raise();
     }
 }
