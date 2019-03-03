@@ -22,6 +22,5 @@ MonoBehaviour:
   effects:
   - {fileID: 11400000, guid: 970f42e8ea7e90449bcf50b34617633b, type: 2}
   - {fileID: 11400000, guid: f51b3dd137f6f72479da201b61d485d6, type: 2}
-  hasCounter: 1
-  counterLines:
-  - "J'me souvient pas t'avoir envoy\xE9 quelqu'un"
+  hasCounter: 0
+  counter: {fileID: 0}

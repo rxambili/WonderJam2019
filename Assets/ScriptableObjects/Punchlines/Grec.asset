@@ -19,6 +19,5 @@ MonoBehaviour:
   category: 1
   effects:
   - {fileID: 11400000, guid: 8adb48e42da12ab47983b8f9bb6592c2, type: 2}
-  hasCounter: 1
-  counterLines:
-  - Boudha n'est pas un dieu grec
+  hasCounter: 0
+  counter: {fileID: 0}

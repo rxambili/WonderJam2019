@@ -1867,6 +1867,8 @@ MonoBehaviour:
   m_YbuttonText: {fileID: 710797115}
   m_AbuttonText: {fileID: 2132711263}
   m_BbuttonText: {fileID: 1287908112}
+  disabledColor: {r: 0.26666668, g: 0.26666668, b: 0.26666668, a: 1}
+  enabledColor: {r: 340.44495, g: 340.44495, b: 340.44495, a: 1}
 --- !u!1 &1092377022
 GameObject:
   m_ObjectHideFlags: 0
@@ -3475,6 +3477,8 @@ MonoBehaviour:
   m_YbuttonText: {fileID: 1725959114}
   m_AbuttonText: {fileID: 849875378}
   m_BbuttonText: {fileID: 1742317696}
+  disabledColor: {r: 0.26666668, g: 0.26666668, b: 0.26666668, a: 1}
+  enabledColor: {r: 255, g: 255, b: 255, a: 1}
 --- !u!114 &1994051103
 MonoBehaviour:
   m_ObjectHideFlags: 0

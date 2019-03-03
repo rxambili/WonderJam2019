@@ -22,7 +22,6 @@ public class Punchline : ScriptableObject
 
     public bool hasCounter = false;
 
-    [TextArea(3, 10)]
-    public string[] counterLines;
+    public Punchline counter;
     
 }
