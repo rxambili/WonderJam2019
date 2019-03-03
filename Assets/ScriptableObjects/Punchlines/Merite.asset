@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Merite
   m_EditorClassIdentifier: 
-  title: "m\xE9rite"
+  title: Brasser l'Air
   lines:
-  - Juste parce que tu parles...
-  - "\xE7a veut pas dire que t'as du m\xE9rite..."
-  - "arr\xEAte de brasser de l'air..."
-  - il faudrait que tu cogites !
+  - "Juste parce que tu parles \xE7a veut pas dire que t'as du m\xE9rite..."
+  - "arr\xEAte de brasser de l'air, j'vais finir pas traverser l'am\xE9rique! "
   flowCost: 15
   category: 2
   effects:

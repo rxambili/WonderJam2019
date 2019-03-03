@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class FlowBar : MonoBehaviour
 {
     private Image flowBar;
-    public TextMeshProUGUI pourcentageText;
+    //public TextMeshProUGUI pourcentageText;
     public PlayerController player;
 
     // Start is called before the first frame update
@@ -20,6 +20,6 @@ public class FlowBar : MonoBehaviour
     void Update()
     {
         flowBar.fillAmount = (float)player.flow / 100;
-        pourcentageText.text = "" + player.flow + "/100";
+        //pourcentageText.text = "" + player.flow + "/100";
     }
 }

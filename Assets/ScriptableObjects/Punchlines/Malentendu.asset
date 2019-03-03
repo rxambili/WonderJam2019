@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Malentendu
   m_EditorClassIdentifier: 
-  title: "sc\xE8ne...malentendu"
+  title: "Sc\xE8ne...Malentendu"
   lines:
-  - "T'es vraiment pas fais pour la sc\xE8ne..."
-  - mais vas-y fonce, on sait jamais...
+  - "T'es vraiment pas fais pour la sc\xE8ne, mais vas-y fonce, on sait jamais..."
   - "Sur un malentendu \xE7a peut passer !"
   flowCost: 40
   category: 2

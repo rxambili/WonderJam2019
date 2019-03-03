@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: LoveAmour
   m_EditorClassIdentifier: 
-  title: love...amour
+  title: 'Love '
   lines:
-  - Je vais tatouer love sur les phalanges...
+  - Je vais tatouer LOVE sur les phalanges...
   - pour te frapper avec amour !
   flowCost: 50
   category: 2

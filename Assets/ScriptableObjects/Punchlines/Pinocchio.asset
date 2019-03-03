@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Pinocchio
   m_EditorClassIdentifier: 
-  title: pinocchio
+  title: Pinocchio
   lines:
   - "Ta gueule de bois ferait passer Pinocchio pour un vrai petit gar\xE7on !"
   flowCost: 30

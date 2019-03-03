@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Pense
   m_EditorClassIdentifier: 
-  title: je pense donc
+  title: PenseDonc
   lines:
-  - "Quand je vois ce que tu as \xE0 montrer..."
-  - et que j'entends ce que tu dis...
+  - "Quand je vois ce que tu as \xE0 montrer et que j'entends ce que tu dis..."
   - je suis content de penser ce que je pense !
   flowCost: 30
   category: 2

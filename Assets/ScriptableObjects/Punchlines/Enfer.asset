@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Enfer
   m_EditorClassIdentifier: 
-  title: enfer
+  title: Va Te Cacher
   lines:
-  - Je pourrais bien te faire mourir de honte...
-  - "mais m\xEAme L'ENFER voudrais pas de toi !"
+  - "Vu ta d\xE9gaine, tu ferais mieux de te cacher..."
+  - "mais m\xEAme au Carnaval de Venise tu te ferais remarquer!"
   flowCost: 20
   category: 1
   effects:

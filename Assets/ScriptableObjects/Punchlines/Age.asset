@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Age
   m_EditorClassIdentifier: 
-  title: age...talent
+  title: Age...Talent
   lines:
   - "J'ai pas la moiti\xE9 de ton \xE2ge..."
   - t'as pas l'quart de mon talent !

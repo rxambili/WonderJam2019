@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Sensible
   m_EditorClassIdentifier: 
-  title: sensible
+  title: Sensible
   lines:
-  - "Je dois \xEAtre trop sensible..."
-  - quand je te vois tu me fais de la peine.
+  - "Je dois \xEAtre trop sensible, quand je te vois tu me fais de la peine."
   flowCost: 20
   category: 2
   effects:

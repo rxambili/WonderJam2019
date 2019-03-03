@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Singe
   m_EditorClassIdentifier: 
-  title: singe...arbre
+  title: Darwin
   lines:
-  - L'homme descend du singe...
-  - le singe de l'arbre...
-  - "et vu ta t\xEAte tu as du rater une branche !"
+  - L'homme descend du singe et le singe de l'arbre...
+  - "et vu ta t\xEAte et ton clash, t'as du rater plus qu'une branche!"
   flowCost: 10
   category: 0
   effects:

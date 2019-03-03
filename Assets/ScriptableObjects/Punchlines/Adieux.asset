@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Adieux
   m_EditorClassIdentifier: 
-  title: adieux
+  title: Adieux
   lines:
   - "Tous mes proches n'arr\xEAtent pas de me comparer \xE0 un dieu..."
-  - malheureusement pour toi, c'est le moment de faire tes adieux !
+  - malheureusement pour toi, c'est le moment de les faire, tes adieux !
   flowCost: 35
   category: 2
   effects:
