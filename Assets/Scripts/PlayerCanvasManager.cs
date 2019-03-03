@@ -154,7 +154,8 @@ public class PlayerCanvasManager : MonoBehaviour
         }
     }
     public void DisplayButtons(bool display)
-    { 
+    {
+
         if (display)
         {
             EnableButtons();

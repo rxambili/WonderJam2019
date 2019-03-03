@@ -52,13 +52,14 @@ public class PlayerController : MonoBehaviour
         Initialize();
     }
 
-    private void Update()
+    //Cheat finish the game
+    /*private void Update()
     {
         if (Input.GetKey(KeyCode.Y))
         {
             pressure = 100;
         }
-    }
+    }*/
 
     public void Initialize()
     {
@@ -234,19 +235,16 @@ public class PlayerController : MonoBehaviour
     {
         if (playerPunchlines[0].hasCounter)
         {
-            Debug.Log("Affichage counter X");
             playerPanel.ShowCounterImage(ButtonName.X);
         }
 
         if (playerPunchlines[1].hasCounter)
         {
-            Debug.Log("Affichage counter Y");
             playerPanel.ShowCounterImage(ButtonName.Y);
         }
 
         if (playerPunchlines[2].hasCounter)
         {
-            Debug.Log("Affichage counter B");
             playerPanel.ShowCounterImage(ButtonName.B);
         }
     }
@@ -285,7 +283,6 @@ public class PlayerController : MonoBehaviour
 
     public void finishGame()
     {
-        Debug.Log("hey");
         playerPanel.DisplayButtons(false);
     }
 
