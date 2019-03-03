@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8772306636241384156}
   - component: {fileID: 4188385166305158062}
   - component: {fileID: 580304870}
+  - component: {fileID: 580304873}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -44,8 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c22ccd86fc6e541a480f7fdaa67f9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  optionTime: 5
-  actionTime: 10
+  optionTime: 2
+  actionTime: 5
   endPhaseTime: 5
   punchlines:
   - {fileID: 11400000, guid: f57926086b006e54ca403b9d583daba1, type: 2}
@@ -82,6 +83,8 @@ MonoBehaviour:
   publicPunchline: {fileID: 11400000, guid: 5b567489b3249964ebc599af7bca6894, type: 2}
   reposPunchline: {fileID: 11400000, guid: 4295b06de3ad4be4e81dd5468997f9e6, type: 2}
   failedCounter: {fileID: 11400000, guid: 8297c6d80959a80458ed3545e2e86bbf, type: 2}
+  readyText1: {fileID: 0}
+  readyText2: {fileID: 0}
   round: 1
   currentPhase: 0
   timer: 5
@@ -99,3 +102,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1ReadyText: {fileID: 0}
   player2ReadyText: {fileID: 0}
+  player1Canvas: {fileID: 0}
+  player2Canvas: {fileID: 0}
+  timer: {fileID: 0}
+  title: {fileID: 0}
+--- !u!114 &580304873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8772306636241384157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71317dbc474104747ae1803a10c53518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1Win: {fileID: 0}
+  player2Win: {fileID: 0}
+  draw: {fileID: 0}

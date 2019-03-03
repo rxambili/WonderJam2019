@@ -33,8 +33,8 @@ public class StartGame : MonoBehaviour
         player2Canvas.SetActive(true);
         timer.SetActive(true);
         title.SetActive(false);
-        player1ReadyText.enabled = false;
-        player2ReadyText.enabled = false;
+        player1ReadyText.gameObject.SetActive(false);
+        player2ReadyText.gameObject.SetActive(false);
         roundManager.enabled = true;
 
     }

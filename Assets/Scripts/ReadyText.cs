@@ -7,12 +7,12 @@ using UnityEngine.UI;
 public class ReadyText : MonoBehaviour
 {
 
-    public TextMeshProUGUI text;
-    public PlayerController player;
+    private TextMeshProUGUI text;
+    [SerializeField] private PlayerController player;
     // Start is called before the first frame update
     void Start()
     {
-
+        text = GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
