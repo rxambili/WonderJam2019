@@ -12,6 +12,9 @@ public class StartGame : MonoBehaviour
     [SerializeField] private GameObject timer;
     [SerializeField] private GameObject title;
 
+
+    [SerializeField] private PanelsTutorial TutorialPanel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +39,20 @@ public class StartGame : MonoBehaviour
         player1ReadyText.gameObject.SetActive(false);
         player2ReadyText.gameObject.SetActive(false);
         roundManager.enabled = true;
+    }
+
+    public void MainMenu()
+    {
+        player1Canvas.SetActive(false);
+        player2Canvas.SetActive(false);
+        timer.SetActive(false);
+
+        roundManager.enabled = false;
+
+        title.SetActive(true);
+        player1ReadyText.gameObject.SetActive(true);
+        player2ReadyText.gameObject.SetActive(true);
+        
 
     }
 }
