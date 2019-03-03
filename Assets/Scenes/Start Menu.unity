@@ -225,6 +225,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Public
       objectReference: {fileID: 0}
+    - target: {fileID: 2799225895013249257, guid: 152aa2b40d324964dbe0453e3af84125,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2799225895013249174, guid: 152aa2b40d324964dbe0453e3af84125,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -329,6 +334,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2799225894615003355, guid: 152aa2b40d324964dbe0453e3af84125,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2799225894615003335, guid: 152aa2b40d324964dbe0453e3af84125,
         type: 3}
@@ -744,6 +754,31 @@ PrefabInstance:
       propertyPath: title
       value: 
       objectReference: {fileID: 89094444}
+    - target: {fileID: 580304870, guid: 7a1bb1e5ae282a9489163cc03ed1a616, type: 3}
+      propertyPath: onPreStartGame
+      value: 
+      objectReference: {fileID: 11400000, guid: 0516dc14f82456f478bd1ecf0810d8b2,
+        type: 2}
+    - target: {fileID: 580304870, guid: 7a1bb1e5ae282a9489163cc03ed1a616, type: 3}
+      propertyPath: onPlayer1Ready
+      value: 
+      objectReference: {fileID: 11400000, guid: 284b40baa9b04fb439b8fd873cd118aa,
+        type: 2}
+    - target: {fileID: 580304870, guid: 7a1bb1e5ae282a9489163cc03ed1a616, type: 3}
+      propertyPath: onPlayer2Ready
+      value: 
+      objectReference: {fileID: 11400000, guid: 9136710f1ec480149aac4b3a3365033e,
+        type: 2}
+    - target: {fileID: 580304870, guid: 7a1bb1e5ae282a9489163cc03ed1a616, type: 3}
+      propertyPath: onPreStartGameP1
+      value: 
+      objectReference: {fileID: 11400000, guid: 0516dc14f82456f478bd1ecf0810d8b2,
+        type: 2}
+    - target: {fileID: 580304870, guid: 7a1bb1e5ae282a9489163cc03ed1a616, type: 3}
+      propertyPath: onPreStartGameP2
+      value: 
+      objectReference: {fileID: 11400000, guid: e2e0638233a59114dbd6c64ae2d96d15,
+        type: 2}
     - target: {fileID: 580304873, guid: 7a1bb1e5ae282a9489163cc03ed1a616, type: 3}
       propertyPath: player1Win
       value: 
@@ -2295,6 +2330,8 @@ GameObject:
   - component: {fileID: 1284676464}
   - component: {fileID: 1284676466}
   - component: {fileID: 1284676465}
+  - component: {fileID: 1284676468}
+  - component: {fileID: 1284676467}
   m_Layer: 5
   m_Name: P1 Sprite
   m_TagString: Player1
@@ -2371,7 +2408,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 56fd98d0ca7f4d5418e40675c1d83d47, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -2412,6 +2449,47 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   selectedLine: {fileID: 0}
+--- !u!114 &1284676467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284676460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b67de1bbabcac542933bad7796fab30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1284676468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284676460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5d839acec4dea14c8d71651d017c260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 0516dc14f82456f478bd1ecf0810d8b2, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1284676467}
+        m_MethodName: setRunningAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1328257618
 GameObject:
   m_ObjectHideFlags: 0
@@ -3182,6 +3260,8 @@ GameObject:
   - component: {fileID: 1953497741}
   - component: {fileID: 1953497743}
   - component: {fileID: 1953497742}
+  - component: {fileID: 1953497745}
+  - component: {fileID: 1953497744}
   m_Layer: 5
   m_Name: P2 Sprite
   m_TagString: Player2
@@ -3299,6 +3379,47 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   selectedLine: {fileID: 0}
+--- !u!114 &1953497744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953497737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b67de1bbabcac542933bad7796fab30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1953497745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953497737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5d839acec4dea14c8d71651d017c260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: e2e0638233a59114dbd6c64ae2d96d15, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1953497744}
+        m_MethodName: setRunningAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1981256161
 GameObject:
   m_ObjectHideFlags: 0
@@ -3505,15 +3626,91 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onReady: {fileID: 11400000, guid: 284b40baa9b04fb439b8fd873cd118aa, type: 2}
+--- !u!1 &1983845780 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8772306636241384157, guid: 7a1bb1e5ae282a9489163cc03ed1a616,
+    type: 3}
+  m_PrefabInstance: {fileID: 316503957}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1983845781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983845780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5d839acec4dea14c8d71651d017c260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 9136710f1ec480149aac4b3a3365033e, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1983845782}
+        m_MethodName: setPlayer2Ready
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1983845782 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 580304870, guid: 7a1bb1e5ae282a9489163cc03ed1a616,
+    type: 3}
+  m_PrefabInstance: {fileID: 316503957}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983845780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c985c918f8b62f498e3de3c854c0c43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1983845783 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4188385166305158062, guid: 7a1bb1e5ae282a9489163cc03ed1a616,
     type: 3}
   m_PrefabInstance: {fileID: 316503957}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1983845780}
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58c22ccd86fc6e541a480f7fdaa67f9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1983845784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983845780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5d839acec4dea14c8d71651d017c260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 284b40baa9b04fb439b8fd873cd118aa, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1983845782}
+        m_MethodName: setPlayer1Ready
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
