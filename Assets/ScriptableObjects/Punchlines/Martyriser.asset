@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Martyriser
   m_EditorClassIdentifier: 
-  title: martyr
+  title: Martyr
   lines:
-  - "Je suis d\xE9sol\xE9..."
-  - J'aime pas martyriser les faibles !
+  - "T'arr\xEAte pas de te plaindre, tu chouines comme un nouveau n\xE9... "
+  - "pourtant je n'ai m\xEAme pas vraiment commenc\xE9!"
   flowCost: 10
   category: 2
   effects:

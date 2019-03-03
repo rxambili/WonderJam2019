@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Intelligence
   m_EditorClassIdentifier: 
-  title: intelligence...chance
+  title: 200 IQ
   lines:
   - "Si seulement j'\xE9tais moins intelligent..."
   - "peut \xEAtre que tu aurais une chance !"

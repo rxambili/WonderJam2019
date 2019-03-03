@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Kiss
   m_EditorClassIdentifier: 
-  title: "simplicit\xE9"
+  title: "Simplicit\xE9"
   lines:
   - Kiss my ASS !
   - Cordialement !

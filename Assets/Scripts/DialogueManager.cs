@@ -6,6 +6,7 @@ using UnityEngine;
 public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI dialogueText;
+    public TextMeshProUGUI textTitle;
     //public Animator animator;
     public GameObject canvas;
     private Queue<string> sentences;
@@ -17,12 +18,15 @@ public class DialogueManager : MonoBehaviour
     {
         sentences = new Queue<string>();
         canvas.SetActive(false);
+        textTitle.enabled = false;
     }
 
     public void StartDialogue(Punchline punchline)
     {
         // animator.SetBool("IsOpen", true);
         canvas.SetActive(true);
+        textTitle.enabled = true;
+        textTitle.text = punchline.title;
         isTalking = true;
         hasTalked = false;
         sentences.Clear();
@@ -81,6 +85,7 @@ public class DialogueManager : MonoBehaviour
         canvas.SetActive(false);
         isTalking = false;
         hasTalked = true;
+        textTitle.enabled = false;
         // animator.SetBool("IsOpen", false);
     }
 

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b30bc22f05b093468cf776270a3785c, type: 3}
   m_Name: Kamelott
   m_EditorClassIdentifier: 
-  title: dire...mal
+  title: Arrete D'Parler
   lines:
   - "Non mais je crois qu'il faut que t'arr\xEAtes de dire des trucs ..."
-  - "Tu te fais du mal, et pas qu'\xE0 toi !"
+  - "Et je dis pas seulement \xE7a pour les autres, tu te fais du mal!"
   flowCost: 50
   category: 2
   effects:
