@@ -15,11 +15,11 @@ MonoBehaviour:
   title: Age...Talent
   lines:
   - "J'ai pas la moiti\xE9 de ton \xE2ge"
-  - T'as pas lquart de mon talent
+  - T'as pas l'quart de mon talent
   flowCost: 40
   category: 0
   effects:
   - {fileID: 11400000, guid: 09fd890d1848f6d429eeff417b76bbaa, type: 2}
   - {fileID: 11400000, guid: 8106f5538e8e4634385d090ab4e862e0, type: 2}
   hasCounter: 0
-  counterLines: []
+  counter: {fileID: 0}
