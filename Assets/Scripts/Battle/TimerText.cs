@@ -4,6 +4,7 @@ using UnityEngine;
 public class TimerText : MonoBehaviour
 {
     private TextMeshProUGUI timer;
+    private int size = 50;
 
     private void Awake()
     {
@@ -25,8 +26,4 @@ public class TimerText : MonoBehaviour
         timer.text = time.ToString();
     }
 
-    private void Update()
-    {
-        
-    }
 }
