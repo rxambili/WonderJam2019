@@ -17,7 +17,7 @@ MonoBehaviour:
   - Je crois qtu t'es perdu
   - Jpeux tmontrer la sortie
   flowCost: 50
-  category: 0
+  category: 2
   effects:
   - {fileID: 11400000, guid: f8e553f25f1f37c4b9570486d6417e48, type: 2}
   - {fileID: 11400000, guid: ca978e13cd1da6c4bb987f127767e56f, type: 2}

@@ -17,7 +17,7 @@ MonoBehaviour:
   - "Comme la lune qui brille gr\xE2ce au soleil"
   - "C'parceque chui l\xE0 q'tu peux briller"
   flowCost: 35
-  category: 1
+  category: 2
   effects:
   - {fileID: 11400000, guid: 1715976b59f5892449b3d5036468c0c9, type: 2}
   - {fileID: 11400000, guid: c05977f7d2bda594698a0b856c359bf5, type: 2}

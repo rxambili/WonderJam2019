@@ -16,7 +16,7 @@ MonoBehaviour:
   lines:
   - '...'
   flowCost: 0
-  category: 0
+  category: 2
   effects:
   - {fileID: 11400000, guid: 230159110beb20649b74c202348a5430, type: 2}
   - {fileID: 11400000, guid: 0ea89196955e96d49b7f7bf324ed2b81, type: 2}

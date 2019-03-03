@@ -84,6 +84,8 @@ public class PlayerController : MonoBehaviour
 
     public void OptionMode()
     {
+        playerPanel.HideFlowPourcentageText();
+        playerPanel.HideCounterImages();
         playerPanel.DisplayButtons(true);
         playerPanel.OptionMode();       
     }
@@ -91,10 +93,14 @@ public class PlayerController : MonoBehaviour
     public void ClashMode()
     {
         playerPanel.DisplayButtons(true);
-        playerPanel.SetButtonText(ButtonName.X, playerPunchlines[0].title);
-        playerPanel.SetButtonText(ButtonName.Y, playerPunchlines[1].title);
-        playerPanel.SetButtonText(ButtonName.B, playerPunchlines[2].title);
-        playerPanel.SetButtonText(ButtonName.A, "Répartie");
+        playerPanel.SetButtonText(ButtonName.X, playerPunchlines[0].title, chooseTextColor(playerPunchlines[0]));
+        playerPanel.SetButtonText(ButtonName.Y, playerPunchlines[1].title, chooseTextColor(playerPunchlines[1]));
+        playerPanel.SetButtonText(ButtonName.B, playerPunchlines[2].title, chooseTextColor(playerPunchlines[2]));
+        playerPanel.SetPunchLinePourcentage(ButtonName.X, playerPunchlines[0].flowCost);
+        playerPanel.SetPunchLinePourcentage(ButtonName.Y, playerPunchlines[1].flowCost);
+        playerPanel.SetPunchLinePourcentage(ButtonName.B, playerPunchlines[2].flowCost);
+        playerPanel.ShowFlowPourcentageText();
+        showCounterIconIfCounterExist();
         currentActionMode = ActionMode.CLASH;
 
     }
@@ -119,6 +125,7 @@ public class PlayerController : MonoBehaviour
 
     public void EndingPhase()
     {
+        playerPanel.HideCounterImages();
         playerPanel.DisplayButtons(false);
     }
 
@@ -154,5 +161,40 @@ public class PlayerController : MonoBehaviour
     {
         dialogueManager.hasTalked = false;
         dialogueManager.isTalking = false;
+    }
+
+    public ButtonTextColor chooseTextColor(Punchline punchline)
+    {
+        switch(punchline.category)
+        {
+            case PunchlineCategory.CLASH:
+                return ButtonTextColor.RED;
+            case PunchlineCategory.EGO:
+                return ButtonTextColor.ORANGE;
+            case PunchlineCategory.CLASHEGO:
+                return ButtonTextColor.REDORANGE;
+            default:
+                return ButtonTextColor.WHITE;
+        }
+    }
+
+    public void showCounterIconIfCounterExist()
+    {
+        if (playerPunchlines[0].hasCounter)
+        {
+            Debug.Log("Affichage counter X");
+            playerPanel.ShowCounterImage(ButtonName.X);
+        }
+        if (playerPunchlines[1].hasCounter)
+        {
+            Debug.Log("Affichage counter Y");
+            playerPanel.ShowCounterImage(ButtonName.Y);
+        }
+        if (playerPunchlines[2].hasCounter)
+        {
+            Debug.Log("Affichage counter B");
+            playerPanel.ShowCounterImage(ButtonName.B);
+        }
+
     }
 }

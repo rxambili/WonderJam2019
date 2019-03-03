@@ -18,7 +18,7 @@ MonoBehaviour:
   - "Que dieu m'a envoy\xE9 woltek"
   - "Pour q'j'lui apprenne \xE0 clasher"
   flowCost: 80
-  category: 1
+  category: 2
   effects:
   - {fileID: 11400000, guid: 970f42e8ea7e90449bcf50b34617633b, type: 2}
   - {fileID: 11400000, guid: f51b3dd137f6f72479da201b61d485d6, type: 2}

@@ -19,7 +19,7 @@ MonoBehaviour:
   - Que tout le monde me prends
   - Pour un myth un mirage
   flowCost: 40
-  category: 1
+  category: 2
   effects:
   - {fileID: 11400000, guid: 850f11397f5f8884c9dac6e432a1c620, type: 2}
   - {fileID: 11400000, guid: 8261c5873d0841447a90c601e18346fd, type: 2}

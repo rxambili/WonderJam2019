@@ -17,7 +17,7 @@ MonoBehaviour:
   - "Si seulement j'\xE9tais moins intelligent"
   - "Peut \xEAtre que t'aurais une chance"
   flowCost: 50
-  category: 1
+  category: 2
   effects:
   - {fileID: 11400000, guid: 1715976b59f5892449b3d5036468c0c9, type: 2}
   - {fileID: 11400000, guid: 3eb0075254d71ab47a9453c036d5a449, type: 2}

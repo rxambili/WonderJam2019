@@ -19,7 +19,7 @@ MonoBehaviour:
   - "Am\xE8ne un ami"
   - Si t'en a un...
   flowCost: 80
-  category: 0
+  category: 2
   effects:
   - {fileID: 11400000, guid: cba59a62a3462da4da149384cb2e497f, type: 2}
   - {fileID: 11400000, guid: 98b23e103974cb842a5c6ed22f607f67, type: 2}
